@@ -417,32 +417,46 @@ footer a{color:var(--red2);text-decoration:none}
           <div class="project-meta">
             <div class="project-client">Deep Learning</div>
             <div class="project-title">AI Skin Disease Classifier</div>
-            <div class="project-tags-preview"><span class="tag">CNN</span><span class="tag">Grad-CAM</span><span class="tag">Fairness AI</span></div>
+            <div class="project-tags-preview"><span class="tag">CNN</span><span class="tag">MobileNetV2</span><span class="tag">Grad-CAM</span><span class="tag">Fairness AI</span></div>
           </div>
         </div>
         <div class="project-toggle">+</div>
       </div>
       <div class="project-body">
-        <p class="project-intro">A CNN classifying benign vs malignant skin lesions — designed with explainability and skin tone fairness as core requirements from day one, not afterthoughts.</p>
+        <p class="project-intro">A CNN classifying benign vs malignant skin lesions — designed with explainability and skin tone fairness as core requirements from day one. Built through four model iterations from a simple CNN to MobileNetV2 transfer learning, reaching 92% accuracy.</p>
         <div class="project-full-desc">
-          <p>Medical AI carries real risk: a model that performs well on average but fails for certain skin tones can cause direct harm. I built this classifier with that concern at the centre of every design decision.</p>
-          <p>The dataset was self-curated from Kaggle and the web to ensure representation across skin tones. Grad-CAM was applied to visualise which regions of an image drove the classification — making predictions interpretable for users without ML backgrounds. LIME provided local explanations at the individual prediction level.</p>
-          <p>Skin tone bias was addressed explicitly using a Fairness Through Awareness approach, which conditions the model on protected attributes rather than ignoring them. The interface was designed in Figma and validated through think-aloud sessions and A/B testing with real users — not just evaluated on benchmark metrics.</p>
+          <p>Dermatology AI has a well-documented problem: most existing systems were trained on datasets skewed toward lighter skin tones, leaving patients with darker complexions underserved. Misdiagnosis disproportionately affects minority communities at precisely the moments when early detection matters most. This project was built to address that gap directly.</p>
+          <p>The dataset was self-curated across three methods: web scraping with Selenium and Firefox WebDriver, manual collection from dermatology sources, and bulk images from Kaggle. The modelling journey was iterative and deliberate — Iteration 1 established a clean custom CNN baseline. Iteration 2 added Dropout(0.5) and full data augmentation (rotation, zoom, shear, horizontal flip). Iteration 3 introduced MobileNetV2 pre-trained on ImageNet with a frozen base and a custom classification head, jumping accuracy to 92%. Iteration 4 reduced input size to 160x160 as a deliberate speed/accuracy trade-off.</p>
+          <p>Fairness was embedded throughout using a Fairness Through Awareness approach — explicitly annotating skin type as a sensitive attribute, and defining a similarity metric that accounts for how the same condition manifests differently across skin tones. Group fairness metrics were computed, and an Equal Opportunity Difference of 0.025 was identified and documented as residual bias requiring mitigation in a deployed system.</p>
+          <p>Explainability was applied via LIME (1000 perturbation samples to identify influential image regions) and Grad-CAM (gradients through the last convolutional layer producing a heatmap clinicians can read directly). Error analysis on the final model specifically focused on false negatives — predicting benign when malignant — which carry the greatest clinical risk. Human-level performance was benchmarked at ~45.8% across five peers; the final model at 92% substantially exceeds both the 52% random baseline and human performance.</p>
         </div>
         <div class="block-title">Project Highlights</div>
         <ul class="highlight-list">
-          <li>Self-curated dataset ensuring representation across skin tones for benign/malignant classification</li>
-          <li>Applied Grad-CAM and LIME to produce visual explanations interpretable for clinical users</li>
-          <li>Addressed skin tone bias using a Fairness Through Awareness approach</li>
-          <li>Designed a Figma prototype and validated UX through think-aloud sessions and A/B testing</li>
+          <li>Four model iterations: MLP baseline → custom CNN → CNN + Dropout/Augmentation → MobileNetV2 transfer learning (92% accuracy, F1: 0.92)</li>
+          <li>Dataset self-curated via Selenium scraping, manual collection, and Kaggle to ensure diverse skin tone representation</li>
+          <li>Fairness Through Awareness: skin type as sensitive attribute; Equal Opportunity Difference = 0.025 identified and documented</li>
+          <li>LIME (1000 perturbation samples) and Grad-CAM (last conv layer) applied for clinical-grade explainability</li>
+          <li>Error analysis focused on false negatives — the highest clinical risk failure mode</li>
+          <li>Human-level performance benchmarked at 45.8%; final model exceeds it at 92%</li>
+          <li>Figma prototype designed and validated through think-aloud sessions and A/B testing</li>
         </ul>
         <div class="block-title">Key Takeaways</div>
         <ul class="takeaway-list">
-          <li>Medical AI fairness requires proactive data curation — you cannot fix bias after the fact with post-processing alone</li>
-          <li>User testing with real people reveals usability issues that no benchmark metric can detect</li>
+          <li>MobileNetV2 transfer learning jumps accuracy from ~86% to 92% — ImageNet features transfer powerfully even to medical imaging</li>
+          <li>Fairness requires intentional data curation and explicit sensitive attribute handling from the start, not post-hoc fixes</li>
+          <li>In medical AI, recall for the malignant class matters more than overall accuracy — a false negative can cost a life</li>
+          <li>Grad-CAM heatmaps are the difference between a model clinicians trust and one they will not use</li>
         </ul>
+        <div class="pdf-block">
+          <div class="pdf-label">DAPS Diagram</div>
+          <iframe class="pdf-embed" src="DAPS_diagram.pdf" title="AI Skin Disease Classifier DAPS Diagram" style="height:380px"></iframe>
+        </div>
+        <div class="pdf-block">
+          <div class="pdf-label">Full Report — Block C Creative Brief</div>
+          <iframe class="pdf-embed" src="AI_skin_diseases_Report.pdf" title="AI Skin Disease Classifier Full Report"></iframe>
+        </div>
         <div class="project-footer">
-          <div class="tech-stack"><span class="tech-badge">CNN</span><span class="tech-badge">Grad-CAM</span><span class="tech-badge">LIME</span><span class="tech-badge">Fairness AI</span><span class="tech-badge">Figma</span></div>
+          <div class="tech-stack"><span class="tech-badge">CNN</span><span class="tech-badge">MobileNetV2</span><span class="tech-badge">Grad-CAM</span><span class="tech-badge">LIME</span><span class="tech-badge">Fairness AI</span><span class="tech-badge">Transfer Learning</span><span class="tech-badge">Figma</span></div>
         </div>
       </div>
     </div>
@@ -515,7 +529,7 @@ footer a{color:var(--red2);text-decoration:none}
           <p>I sourced data from the World Bank and data.gov, collecting Annual CO2 emissions, Real GDP growth, Total GHG emissions, and pollution-related mortality across 2014–2019. The three countries were chosen deliberately: Australia is large with historically high emissions, Germany is an industrial economy in transition, and France represents a more decoupled growth model — together they tell different sides of the same story.</p>
           <p>Data cleaning was done entirely in Power Query. This included trimming and filtering columns to focus only on relevant years and countries, converting the Entity column in Total-GHG-emissions from strings to numbers using a custom IF function column, and merging the real GDP growth and total GHG emissions tables to enable direct visual comparison on the same chart axes.</p>
           <p>The final Power BI dashboard spans three pages. Page one tracks Real GDP growth by year using bar charts and a line chart with trend lines, with a correlation coefficient card. Page two overlays the Sum of Real GDP and Annual GHG emissions over time — revealing that while GDP fluctuates, GHG emissions remain relatively stable, suggesting partial decoupling. Page three focuses on the human cost: deaths from unsafe water and air pollution by country, showing that Australia has the lowest pollution-related death count while Germany has the highest, despite their GDP differences.</p>
-          <p>The headline finding: when the economy grows, emissions tend to rise, and pollution-related deaths correlate more strongly with air and water quality than with GDP itself, meaning that environmental health policy matters independently of economic growth.</p>
+          <p>The headline finding: when the economy grows, emissions tend to rise — but the correlation coefficient of −0.01 across all entities shows the relationship is weaker than expected. More strikingly, pollution-related deaths correlate more strongly with air and water quality than with GDP itself, meaning that environmental health policy matters independently of economic growth.</p>
         </div>
         <div class="block-title">Project Highlights</div>
         <ul class="highlight-list">
