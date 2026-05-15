@@ -502,32 +502,43 @@ footer a{color:var(--red2);text-decoration:none}
           <div class="project-num">07</div>
           <div class="project-meta">
             <div class="project-client">Data Analysis</div>
-            <div class="project-title">SDG GDP Growth & Emissions Analysis</div>
+            <div class="project-title">SDG GDP Growth &amp; Emissions Analysis</div>
             <div class="project-tags-preview"><span class="tag">Power BI</span><span class="tag">Power Query</span><span class="tag">EDA</span></div>
           </div>
         </div>
         <div class="project-toggle">+</div>
       </div>
       <div class="project-body">
-        <p class="project-intro">Exploring the relationship between economic growth and environmental damage using World Bank open data — and asking whether a country can grow its GDP without growing its emissions.</p>
+        <p class="project-intro">Does a country's economic growth inevitably come at the cost of its environment? This project investigates that question using World Bank data across Australia, Germany, and France — and the answer is more nuanced than a simple yes or no.</p>
         <div class="project-full-desc">
-          <p>This project used World Bank datasets to investigate the link between GDP growth and CO₂/GHG emissions across three countries with different economic profiles: Australia, Germany, and France. Each represents a distinct trajectory — high emissions/high GDP, industrial transition, and relatively decoupled growth — making the comparison meaningful.</p>
-          <p>Data was cleaned and merged in Power Query, handling inconsistencies in country-level reporting across years. An interactive Power BI dashboard was built with line charts tracking emissions over GDP growth, bar charts comparing per-capita figures, and box plots showing distribution across years.</p>
-          <p>The key finding: emissions rise with GDP in all three countries, but pollution-related deaths track more closely with air and water quality than with GDP itself — suggesting that the relationship between economic development and environmental harm is more complex than a simple correlation.</p>
+          <p>The research question driving this project was: <em>to what extent does the economic development and growth of a country influence its carbon emissions and greenhouse gas levels?</em> It is a question with real policy implications — if GDP growth and emissions are tightly coupled, then sustainable development requires fundamentally different economic models.</p>
+          <p>I sourced data from the World Bank and data.gov, collecting Annual CO2 emissions, Real GDP growth, Total GHG emissions, and pollution-related mortality across 2014–2019. The three countries were chosen deliberately: Australia is large with historically high emissions, Germany is an industrial economy in transition, and France represents a more decoupled growth model — together they tell different sides of the same story.</p>
+          <p>Data cleaning was done entirely in Power Query. This included trimming and filtering columns to focus only on relevant years and countries, converting the Entity column in Total-GHG-emissions from strings to numbers using a custom IF function column, and merging the real GDP growth and total GHG emissions tables to enable direct visual comparison on the same chart axes.</p>
+          <p>The final Power BI dashboard spans three pages. Page one tracks Real GDP growth by year using bar charts and a line chart with trend lines, with a correlation coefficient card. Page two overlays the Sum of Real GDP and Annual GHG emissions over time — revealing that while GDP fluctuates, GHG emissions remain relatively stable, suggesting partial decoupling. Page three focuses on the human cost: deaths from unsafe water and air pollution by country, showing that Australia has the lowest pollution-related death count while Germany has the highest, despite their GDP differences.</p>
+          <p>The headline finding: when the economy grows, emissions tend to rise — but the correlation coefficient of −0.01 across all entities shows the relationship is weaker than expected. More strikingly, pollution-related deaths correlate more strongly with air and water quality than with GDP itself, meaning that environmental health policy matters independently of economic growth.</p>
         </div>
         <div class="block-title">Project Highlights</div>
         <ul class="highlight-list">
-          <li>Cleaned and merged multi-country World Bank datasets in Power Query</li>
-          <li>Built an interactive dashboard with line charts, bar charts, and box plots</li>
-          <li>Key finding: emissions rise with GDP, while pollution-related deaths track closely with air and water quality</li>
+          <li>Sourced and merged datasets from World Bank and data.gov covering CO2, GHG, GDP, and pollution mortality (2014–2019)</li>
+          <li>Cleaned all datasets in Power Query: column trimming, type conversion, custom IF columns, and query merging</li>
+          <li>Built a 3-page interactive Power BI dashboard: GDP trends, GHG comparison, and pollution-related deaths</li>
+          <li>Calculated correlation coefficients between GDP growth and GHG emissions — overall coefficient: −0.01</li>
+          <li>Australia had the lowest GDP growth but also the lowest pollution-related deaths; Germany had the highest of both</li>
+          <li>GHG emissions remained relatively stable despite GDP fluctuations — indicating partial decoupling over the period</li>
         </ul>
         <div class="block-title">Key Takeaways</div>
         <ul class="takeaway-list">
-          <li>Environmental and economic data rarely tell a simple story — the nuance is in the disaggregation</li>
-          <li>Data visualisation for policy audiences requires clarity and narrative, not just accuracy</li>
+          <li>GDP and emissions are correlated but not as tightly as assumed — energy mix and environmental policy matter more than raw economic size</li>
+          <li>Pollution deaths are driven by air and water quality, not directly by GDP — this challenges the simple "growth equals harm" narrative</li>
+          <li>Dashboard design for a non-technical audience requires storytelling: each page should answer one question clearly</li>
+          <li>Missing data in early years made regression analysis impossible — data quality constraints must always be documented honestly</li>
         </ul>
+        <div class="pdf-block">
+          <div class="pdf-label">Power BI Dashboard</div>
+          <iframe class="pdf-embed" src="PowerBI_Dashboard.pdf" title="SDG GDP Growth and Emissions Power BI Dashboard"></iframe>
+        </div>
         <div class="project-footer">
-          <div class="tech-stack"><span class="tech-badge">Power BI</span><span class="tech-badge">Power Query</span><span class="tech-badge">EDA</span><span class="tech-badge">Data Viz</span></div>
+          <div class="tech-stack"><span class="tech-badge">Power BI</span><span class="tech-badge">Power Query</span><span class="tech-badge">EDA</span><span class="tech-badge">Data Viz</span><span class="tech-badge">World Bank Data</span><span class="tech-badge">CRISP-DM</span></div>
         </div>
       </div>
     </div>
