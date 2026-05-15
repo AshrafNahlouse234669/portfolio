@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ashraf Nahlouse — Data Science & AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0c0a0a;--bg2:#110d0d;--bg3:#160f0f;
+  --red:#c0392b;--red2:#e74c3c;
+  --red-dim:rgba(192,57,43,0.12);--red-glow:rgba(192,57,43,0.25);
+  --gold:#c9a96e;
+  --text:#e8e2dc;--muted:#7a6f6a;--muted2:#5a5050;
+  --border:rgba(255,255,255,0.06);--border2:rgba(192,57,43,0.3);
+  --font-display:'Bebas Neue',sans-serif;
+  --font-body:'Crimson Pro',serif;
+  --font-mono:'JetBrains Mono',monospace;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:18px;line-height:1.7;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:1000}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 3rem;background:rgba(12,10,10,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:var(--font-display);font-size:1.4rem;letter-spacing:0.1em;color:var(--red2)}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-family:var(--font-mono);font-size:11px;color:var(--muted);text-decoration:none;letter-spacing:0.15em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover{color:var(--text)}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:8rem 3rem 4rem;max-width:1200px;margin:0 auto;gap:4rem;position:relative}
+.hero-eyebrow{font-family:var(--font-mono);font-size:11px;color:var(--red2);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:1.5rem;display:flex;align-items:center;gap:12px}
+.hero-eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--red2)}
+.hero h1{font-family:var(--font-display);font-size:clamp(4rem,9vw,8rem);line-height:0.9;letter-spacing:0.02em;margin-bottom:1.5rem;color:var(--text)}
+.hero h1 .last{-webkit-text-stroke:1px var(--red2);color:transparent;display:block}
+.hero-desc{font-size:1.1rem;color:var(--muted);font-weight:300;font-style:italic;max-width:460px;margin-bottom:2.5rem;line-height:1.9}
+.available{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--border2);border-radius:2px;padding:8px 18px;font-family:var(--font-mono);font-size:10px;color:var(--red2);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:2rem}
+.pulse{width:7px;height:7px;border-radius:50%;background:var(--red2);animation:blink 2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{font-family:var(--font-mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;padding:0.8rem 1.8rem;border-radius:2px;text-decoration:none;cursor:pointer;transition:all 0.2s;border:none;display:inline-flex;align-items:center;gap:8px}
+.btn-red{background:var(--red);color:#fff}.btn-red:hover{background:var(--red2)}
+.btn-ghost{background:transparent;color:var(--muted);border:1px solid var(--border2)}.btn-ghost:hover{color:var(--text);border-color:var(--muted2)}
+.hero-right{display:flex;flex-direction:column;gap:1rem;position:relative}
+.hero-stat-block{border:1px solid var(--border);border-left:2px solid var(--red);padding:1.25rem 1.5rem;background:var(--bg2);position:relative;overflow:hidden}
+.hero-stat-block::before{content:'';position:absolute;top:0;right:0;width:60px;height:60px;background:var(--red-dim);border-radius:50%;transform:translate(20px,-20px)}
+.stat-n{font-family:var(--font-display);font-size:3rem;color:var(--red2);line-height:1;margin-bottom:4px}
+.stat-l{font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase}
+.hero-stat-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+
+/* SECTIONS */
+.section{max-width:1200px;margin:0 auto;padding:6rem 3rem}
+.sec-label{font-family:var(--font-mono);font-size:10px;color:var(--red);letter-spacing:0.25em;text-transform:uppercase;margin-bottom:0.5rem}
+h2{font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);letter-spacing:0.04em;line-height:1;margin-bottom:3rem;color:var(--text)}
+hr.divider{border:none;border-top:1px solid var(--border);max-width:1200px;margin:0 auto}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:3fr 2fr;gap:4rem;align-items:start}
+.about-text p{color:var(--muted);font-size:1.15rem;font-weight:300;margin-bottom:1.25rem;line-height:1.9}
+.about-text p strong{color:var(--text);font-weight:600}
+.about-text p em{color:var(--red2);font-style:italic}
+.sidebar-block{border:1px solid var(--border);border-top:2px solid var(--red);padding:1.5rem;background:var(--bg2);margin-bottom:1rem}
+.sidebar-title{font-family:var(--font-mono);font-size:10px;color:var(--red2);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.75rem}
+.lang-item{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--border);font-size:0.95rem}
+.lang-item:last-child{border:none}
+.lang-level{font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:0.05em}
+
+/* SKILLS */
+.skills-bg{background:var(--bg2)}
+.skills-inner{max-width:1200px;margin:0 auto;padding:6rem 3rem}
+.skill-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1px;border:1px solid var(--border);background:var(--border)}
+.skill-cell{background:var(--bg2);padding:1.75rem;transition:background 0.2s}
+.skill-cell:hover{background:var(--bg3)}
+.skill-icon{font-size:1.4rem;margin-bottom:0.75rem;display:block}
+.skill-cell h3{font-family:var(--font-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--red2);margin-bottom:0.75rem}
+.tags{display:flex;flex-wrap:wrap;gap:5px}
+.tag{font-family:var(--font-mono);font-size:10px;padding:3px 9px;border:1px solid var(--border);color:var(--muted);letter-spacing:0.04em;border-radius:1px;transition:all 0.15s}
+.skill-cell:hover .tag{border-color:var(--muted2);color:var(--text)}
+
+/* PROJECTS TIMELINE */
+.projects-timeline{position:relative;padding-left:3rem}
+.timeline-line{position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,var(--red) 10%,var(--red) 90%,transparent)}
+.project-item{position:relative;margin-bottom:1.5rem}
+.timeline-dot{position:absolute;left:-3.4rem;top:1.75rem;width:14px;height:14px;border-radius:50%;border:2px solid var(--red);background:var(--bg);transition:background 0.2s;z-index:2}
+.project-item.open .timeline-dot{background:var(--red)}
+.project-header{background:var(--bg2);border:1px solid var(--border);border-left:3px solid transparent;padding:1.5rem 2rem;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:1rem;transition:all 0.2s;user-select:none}
+.project-header:hover,.project-item.open .project-header{border-left-color:var(--red);background:var(--bg3)}
+.project-header-left{display:flex;align-items:center;gap:1.5rem;flex:1;min-width:0}
+.project-num{font-family:var(--font-display);font-size:2.5rem;color:var(--red-dim);line-height:1;flex-shrink:0;transition:color 0.2s;min-width:3rem}
+.project-item.open .project-num,.project-header:hover .project-num{color:var(--red2)}
+.project-client{font-family:var(--font-mono);font-size:10px;color:var(--red2);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:4px}
+.project-title{font-family:var(--font-display);font-size:1.6rem;letter-spacing:0.03em;color:var(--text);line-height:1.1}
+.project-tags-preview{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.project-toggle{flex-shrink:0;width:36px;height:36px;border:1px solid var(--border2);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--red2);font-size:1.4rem;line-height:1;transition:all 0.2s;font-family:var(--font-mono)}
+.project-item.open .project-toggle{background:var(--red);color:#fff;border-color:var(--red)}
+.project-body{display:none;background:var(--bg3);border:1px solid var(--border);border-top:none;border-left:3px solid var(--red);padding:2rem 2.5rem}
+.project-item.open .project-body{display:block}
+.project-desc-full{font-size:1.05rem;color:var(--muted);font-weight:300;line-height:1.9;margin-bottom:1.75rem;font-style:italic}
+.highlights-title{font-family:var(--font-mono);font-size:10px;color:var(--red2);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.75rem;display:flex;align-items:center;gap:10px}
+.highlights-title::after{content:'';flex:1;height:1px;background:var(--border)}
+.highlight-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.highlight-list li{display:flex;gap:12px;font-size:1rem;color:var(--muted);font-weight:300;line-height:1.6}
+.highlight-list li::before{content:'→';color:var(--red);flex-shrink:0;font-family:var(--font-mono);font-size:0.85rem;margin-top:2px}
+.project-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border)}
+.tech-stack{display:flex;flex-wrap:wrap;gap:5px}
+.tech-badge{font-family:var(--font-mono);font-size:10px;padding:3px 10px;border:1px solid var(--border2);color:var(--red2);letter-spacing:0.05em;border-radius:1px}
+.project-link{font-family:var(--font-mono);font-size:11px;color:var(--muted);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;display:inline-flex;align-items:center;gap:6px;border-bottom:1px solid var(--border2);padding-bottom:2px;transition:color 0.2s,border-color 0.2s}
+.project-link:hover{color:var(--red2);border-color:var(--red2)}
+
+/* EDUCATION */
+.edu-item{display:grid;grid-template-columns:140px 1fr;gap:2rem;padding:2rem 0;border-bottom:1px solid var(--border)}
+.edu-item:first-child{border-top:1px solid var(--border)}
+.edu-year{font-family:var(--font-mono);font-size:11px;color:var(--red);letter-spacing:0.1em;padding-top:4px}
+.edu-title{font-family:var(--font-display);font-size:1.6rem;letter-spacing:0.03em;margin-bottom:4px}
+.edu-school{font-family:var(--font-mono);font-size:11px;color:var(--red2);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.75rem}
+.edu-desc{font-size:1rem;color:var(--muted);font-weight:300;font-style:italic;line-height:1.8}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);margin-top:3rem}
+.contact-cell{background:var(--bg2);padding:1.75rem;text-decoration:none;color:var(--text);display:flex;align-items:flex-start;gap:1rem;transition:background 0.2s}
+.contact-cell:hover{background:var(--bg3)}
+.contact-ico{width:42px;height:42px;border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--red2)}
+.contact-ico svg{width:18px;height:18px}
+.contact-lbl{font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px}
+.contact-val{font-size:1rem;color:var(--text);font-weight:300}
+
+/* FOOTER */
+footer{max-width:1200px;margin:0 auto;padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border)}
+footer p{font-family:var(--font-mono);font-size:10px;color:var(--muted2);letter-spacing:0.08em}
+footer a{color:var(--red2);text-decoration:none}
+
+/* ANIMATIONS */
+.fade-in{opacity:0;transform:translateY(20px);animation:fi 0.6s ease forwards}
+@keyframes fi{to{opacity:1;transform:translateY(0)}}
+.d1{animation-delay:0.1s}.d2{animation-delay:0.2s}.d3{animation-delay:0.35s}.d4{animation-delay:0.5s}.d5{animation-delay:0.65s}
+
+@media(max-width:768px){
+  nav{padding:1rem 1.5rem}.nav-links{display:none}
+  .hero{grid-template-columns:1fr;padding:7rem 1.5rem 3rem}.hero-right{display:none}
+  .section,.skills-inner{padding:4rem 1.5rem}
+  .about-grid{grid-template-columns:1fr}
+  .projects-timeline{padding-left:2rem}
+  .edu-item{grid-template-columns:1fr;gap:0.5rem}
+  footer{flex-direction:column;gap:0.5rem;text-align:center;padding:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">AN.</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="available fade-in"><span class="pulse"></span>Available for internship — 36–40 hrs/week</div>
+    <div class="hero-eyebrow fade-in d1">Data Science & AI · BUas · Delft, NL</div>
+    <h1 class="fade-in d2">ASHRAF<span class="last">NAHLOUSE</span></h1>
+    <p class="hero-desc fade-in d3">Building intelligent systems that bridge research and real-world impact — NLP pipelines, computer vision, and MLOps at scale.</p>
+    <div class="hero-cta fade-in d4">
+      <a href="https://github.com/AshrafNahlouse234669" target="_blank" rel="noopener" class="btn btn-red">GitHub ↗</a>
+      <a href="https://linkedin.com/in/ashraf-nahlouse-7924ba396" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+      <a href="mailto:Ashrafnahlouse@gmail.com" class="btn btn-ghost">Contact</a>
+    </div>
+  </div>
+  <div class="hero-right fade-in d5">
+    <div class="hero-stat-block">
+      <div class="stat-n">7</div>
+      <div class="stat-l">Major projects completed</div>
+    </div>
+    <div class="hero-stat-row">
+      <div class="hero-stat-block"><div class="stat-n">4</div><div class="stat-l">Real clients</div></div>
+      <div class="hero-stat-block"><div class="stat-n">4th</div><div class="stat-l">Year at BUas</div></div>
+    </div>
+    <div class="hero-stat-block">
+      <div class="stat-n">3</div>
+      <div class="stat-l">Languages spoken</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="sec-label">01 / About</div>
+  <h2>WHO I AM</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>I'm a <strong>fourth-year Data Science & AI student</strong> at Breda University of Applied Sciences, passionate about applying machine learning to problems that actually matter.</p>
+      <p>My work spans <em>computer vision, NLP, reinforcement learning, and MLOps</em> — always with an eye toward production-ready, deployable solutions. I've collaborated directly with industry clients including <strong>NPEC, NAC Breda, ANWB, and De Keuken Groep</strong>.</p>
+      <p>I believe the best AI isn't just technically correct — it's explainable, fair, and built for real people. That philosophy runs through every project I build.</p>
+      <p>Currently looking for a <strong>full-time internship starting as soon as possible</strong>, where I can contribute to data-driven innovation at scale.</p>
+    </div>
+    <div class="about-sidebar">
+      <div class="sidebar-block">
+        <div class="sidebar-title">Languages</div>
+        <div class="lang-item"><span>English</span><span class="lang-level">Full professional</span></div>
+        <div class="lang-item"><span>Dutch</span><span class="lang-level">Limited working</span></div>
+        <div class="lang-item"><span>Arabic</span><span class="lang-level">Native / bilingual</span></div>
+      </div>
+      <div class="sidebar-block">
+        <div class="sidebar-title">Location</div>
+        <div style="font-size:1rem;color:var(--muted);font-weight:300">Delft, Netherlands</div>
+      </div>
+      <div class="sidebar-block">
+        <div class="sidebar-title">Education</div>
+        <div style="font-size:1rem;color:var(--muted);font-weight:300">BSc Computer Science & AI<br/><span style="font-size:0.9rem">BUas · 2023 – present</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- SKILLS -->
+<div class="skills-bg" id="skills">
+  <div class="skills-inner">
+    <div class="sec-label">02 / Skills</div>
+    <h2>WHAT I BUILD WITH</h2>
+    <div class="skill-grid">
+      <div class="skill-cell"><span class="skill-icon">⌨️</span><h3>Languages & Tools</h3><div class="tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">Docker</span><span class="tag">VS Code</span><span class="tag">Jupyter</span></div></div>
+      <div class="skill-cell"><span class="skill-icon">🤖</span><h3>ML & Deep Learning</h3><div class="tags"><span class="tag">Scikit-learn</span><span class="tag">TensorFlow</span><span class="tag">PyTorch</span><span class="tag">XGBoost</span><span class="tag">LightGBM</span><span class="tag">CNNs</span><span class="tag">LSTMs</span><span class="tag">U-Net</span></div></div>
+      <div class="skill-cell"><span class="skill-icon">🗣️</span><h3>NLP & Transformers</h3><div class="tags"><span class="tag">HuggingFace</span><span class="tag">BERT</span><span class="tag">AraBERT</span><span class="tag">MARBERT</span><span class="tag">Whisper</span><span class="tag">FastAPI</span></div></div>
+      <div class="skill-cell"><span class="skill-icon">📊</span><h3>Data & Visualisation</h3><div class="tags"><span class="tag">Power BI</span><span class="tag">Matplotlib</span><span class="tag">Seaborn</span><span class="tag">Plotly</span><span class="tag">EDA</span><span class="tag">Feature Eng.</span></div></div>
+      <div class="skill-cell"><span class="skill-icon">☁️</span><h3>MLOps & Cloud</h3><div class="tags"><span class="tag">Azure ML</span><span class="tag">MLflow</span><span class="tag">REST APIs</span><span class="tag">Streamlit</span><span class="tag">CI/CD</span></div></div>
+      <div class="skill-cell"><span class="skill-icon">🔬</span><h3>Methods & XAI</h3><div class="tags"><span class="tag">Transfer Learning</span><span class="tag">PPO / RL</span><span class="tag">Grad-CAM</span><span class="tag">LIME</span><span class="tag">Fairness AI</span><span class="tag">Clustering</span></div></div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- PROJECTS -->
+<section class="section" id="projects">
+  <div class="sec-label">03 / Projects</div>
+  <h2>SELECTED WORK</h2>
+  <div class="projects-timeline">
+    <div class="timeline-line"></div>
+
+    <div class="project-item" id="p1">
+      <div class="timeline-dot"></div>
+      <div class="project-header" onclick="toggleProject('p1')">
+        <div class="project-header-left">
+          <div class="project-num">01</div>
+          <div class="project-meta">
+            <div class="project-client">De Keuken Groep (DKG)</div>
+            <div class="project-title">Truck Loading Optimization</div>
+            <div class="project-tags-preview"><span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">Docker</span></div>
+          </div>
+        </div>
+        <div class="project-toggle">+</div>
+      </div>
+      <div class="project-body">
+        <p class="project-desc-full">A 3D bin packing system replacing manual truck loading for ~40 daily shipments, processing over 1 million items across thousands of transport orders.</p>
+        <div class="project-highlights">
+          <div class="highlights-title">Project Highlights</div>
+          <ul class="highlight-list">
+            <li>Built a DBLF heuristic enforcing LIFO compliance, Dutch ARBO law, and zero fragile item violations</li>
+            <li>Complete data cleaning pipeline: dimension consolidation, unit error correction, missing value imputation via Random Forest Regressor</li>
+            <li>Interactive 3D Plotly visualization for loading sequences — usable by non-technical warehouse staff</li>
+            <li>Delivered as a Dockerised Streamlit app with automated PDF checklist and sticker generation</li>
+          </ul>
+        </div>
+        <div class="project-footer">
+          <div class="tech-stack"><span class="tech-badge">Python</span><span class="tech-badge">Streamlit</span><span class="tech-badge">Docker</span><span class="tech-badge">Plotly</span><span class="tech-badge">Heuristics</span><span class="tech-badge">Random Forest</span></div>
+          <a href="https://github.com/AshrafNahlouse234669/portfolio" target="_blank" rel="noopener" class="project-link">View on GitHub ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-item" id="p2">
+      <div class="timeline-dot"></div>
+      <div class="project-header" onclick="toggleProject('p2')">
+        <div class="project-header-left">
+          <div class="project-num">02</div>
+          <div class="project-meta">
+            <div class="project-client">ANWB</div>
+            <div class="project-title">Road Safety Incident Prediction</div>
+            <div class="project-tags-preview"><span class="tag">Gradient Boosting</span><span class="tag">SQL</span><span class="tag">CNN</span></div>
+          </div>
+        </div>
+        <div class="project-toggle">+</div>
+      </div>
+      <div class="project-body">
+        <p class="project-desc-full">Predicted driving incident types — speeding, harsh braking, cornering — using ANWB data merged with weather and road condition datasets from a SQL data warehouse.</p>
+        <div class="project-highlights">
+          <div class="highlights-title">Project Highlights</div>
+          <ul class="highlight-list">
+            <li>Merged ANWB driving data with external weather and road condition sources via SQL warehouse</li>
+            <li>Preprocessed data: normalisation, duplicate handling, and categorical encoding</li>
+            <li>Iterated through Random Forest, Gradient Boosting, and CNN — landed on a tuned Gradient Boosting final model</li>
+            <li>Deployed as a Streamlit app for stakeholders and a FlutterFlow client app</li>
+          </ul>
+        </div>
+        <div class="project-footer">
+          <div class="tech-stack"><span class="tech-badge">Gradient Boosting</span><span class="tech-badge">SQL</span><span class="tech-badge">CNN</span><span class="tech-badge">Streamlit</span><span class="tech-badge">FlutterFlow</span></div>
+          <a href="https://github.com/AshrafNahlouse234669/portfolio" target="_blank" rel="noopener" class="project-link">View on GitHub ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-item" id="p3">
+      <div class="timeline-dot"></div>
+      <div class="project-header" onclick="toggleProject('p3')">
+        <div class="project-header-left">
+          <div class="project-num">03</div>
+          <div class="project-meta">
+            <div class="project-client">NPEC</div>
+            <div class="project-title">Plant Root Segmentation & Robotic Control</div>
+            <div class="project-tags-preview"><span class="tag">U-Net</span><span class="tag">PyTorch</span><span class="tag">PPO / RL</span></div>
+          </div>
+        </div>
+        <div class="project-toggle">+</div>
+      </div>
+      <div class="project-body">
+        <p class="project-desc-full">A dual-track project: a computer vision pipeline for automated root measurement, and a reinforcement learning agent for robotic control — both for the Netherlands Plant Eco-phenotyping Centre.</p>
+        <div class="project-highlights">
+          <div class="highlights-title">Project Highlights</div>
+          <ul class="highlight-list">
+            <li>Built a U-Net pipeline automating root segmentation and length measurement from Petri dish images</li>
+            <li>Reached F1: 0.81 after iterating on BatchNorm, LeakyReLU, and LR scheduling</li>
+            <li>Trained a PPO reinforcement learning agent in PyBullet to control a liquid-handling robot</li>
+          </ul>
+        </div>
+        <div class="project-footer">
+          <div class="tech-stack"><span class="tech-badge">U-Net</span><span class="tech-badge">PyTorch</span><span class="tech-badge">PPO</span><span class="tech-badge">PyBullet</span><span class="tech-badge">Computer Vision</span></div>
+          <a href="https://github.com/AshrafNahlouse234669/portfolio" target="_blank" rel="noopener" class="project-link">View on GitHub ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-item" id="p4">
+      <div class="timeline-dot"></div>
+      <div class="project-header" onclick="toggleProject('p4')">
+        <div class="project-header-left">
+          <div class="project-num">04</div>
+          <div class="project-meta">
+            <div class="project-client">NLP Pipeline</div>
+            <div class="project-title">Arabic Emotion Classification</div>
+            <div class="project-tags-preview"><span class="tag">MARBERT</span><span class="tag">Whisper</span><span class="tag">Azure ML</span></div>
+          </div>
+        </div>
+        <div class="project-toggle">+</div>
+      </div>
+      <div class="project-body">
+        <p class="project-desc-full">An end-to-end pipeline classifying 7 emotions from Arabic video content — from transcription to production deployment — trained on 39,000+ sentences.</p>
+        <div class="project-highlights">
+          <div class="highlights-title">Project Highlights</div>
+          <ul class="highlight-list">
+            <li>Used Whisper for Arabic audio transcription and a pretrained model for English translation</li>
+            <li>Fine-tuned MARBERT achieving F1: 73 on 39,000+ labelled sentences</li>
+            <li>Applied XAI techniques (SHAP, LIME) for model interpretability</li>
+            <li>Productionised with FastAPI, CLI, Streamlit, Docker, and Azure ML end-to-end</li>
+          </ul>
+        </div>
+        <div class="project-footer">
+          <div class="tech-stack"><span class="tech-badge">MARBERT</span><span class="tech-badge">Whisper</span><span class="tech-badge">Azure ML</span><span class="tech-badge">FastAPI</span><span class="tech-badge">Docker</span><span class="tech-badge">XAI</span></div>
+          <a href="https://github.com/AshrafNahlouse234669/portfolio" target="_blank" rel="noopener" class="project-link">View on GitHub ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-item" id="p5">
+      <div class="timeline-dot"></div>
+      <div class="project-header" onclick="toggleProject('p5')">
+        <div class="project-header-left">
+          <div class="project-num">05</div>
+          <div class="project-meta">
+            <div class="project-client">Deep Learning</div>
+            <div class="project-title">AI Skin Disease Classifier</div>
+            <div class="project-tags-preview"><span class="tag">CNN</span><span class="tag">Grad-CAM</span><span class="tag">Fairness AI</span></div>
+          </div>
+        </div>
+        <div class="project-toggle">+</div>
+      </div>
+      <div class="project-body">
+        <p class="project-desc-full">A CNN classifying benign vs malignant skin lesions — built with explainability and fairness as core design principles, not afterthoughts.</p>
+        <div class="project-highlights">
+          <div class="highlights-title">Project Highlights</div>
+          <ul class="highlight-list">
+            <li>Self-curated dataset scraped from Kaggle and the web for benign/malignant classification</li>
+            <li>Applied Grad-CAM and LIME to make model decisions interpretable for clinical users</li>
+            <li>Addressed skin tone bias using a Fairness Through Awareness approach</li>
+            <li>Designed a Figma prototype and validated UX through think-aloud sessions and A/B testing</li>
+          </ul>
+        </div>
+        <div class="project-footer">
+          <div class="tech-stack"><span class="tech-badge">CNN</span><span class="tech-badge">Grad-CAM</span><span class="tech-badge">LIME</span><span class="tech-badge">Fairness AI</span><span class="tech-badge">Figma</span></div>
+          <a href="https://github.com/AshrafNahlouse234669/portfolio" target="_blank" rel="noopener" class="project-link">View on GitHub ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-item" id="p6">
+      <div class="timeline-dot"></div>
+      <div class="project-header" onclick="toggleProject('p6')">
+        <div class="project-header-left">
+          <div class="project-num">06</div>
+          <div class="project-meta">
+            <div class="project-client">NAC Breda</div>
+            <div class="project-title">Football Player Market Value Prediction</div>
+            <div class="project-tags-preview"><span class="tag">Random Forest</span><span class="tag">MySQL</span><span class="tag">REST API</span></div>
+          </div>
+        </div>
+        <div class="project-toggle">+</div>
+      </div>
+      <div class="project-body">
+        <p class="project-desc-full">Analysed 16,500+ professional football players across 114 metrics to predict market value — built for NAC Breda's scouting and analytics team.</p>
+        <div class="project-highlights">
+          <div class="highlights-title">Project Highlights</div>
+          <ul class="highlight-list">
+            <li>Ran 20 EDA questions on market value, xG, and position performance</li>
+            <li>Trained and tuned Logistic Regression, Random Forest, and Gradient Boosting — achieving 99.88% accuracy</li>
+            <li>Evaluated using MSE, MAE, and R² metrics</li>
+            <li>Built a MySQL pipeline and REST API integration for club-side data access</li>
+          </ul>
+        </div>
+        <div class="project-footer">
+          <div class="tech-stack"><span class="tech-badge">Random Forest</span><span class="tech-badge">MySQL</span><span class="tech-badge">REST API</span><span class="tech-badge">EDA</span><span class="tech-badge">Gradient Boosting</span></div>
+          <a href="https://github.com/AshrafNahlouse234669/portfolio" target="_blank" rel="noopener" class="project-link">View on GitHub ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-item" id="p7">
+      <div class="timeline-dot"></div>
+      <div class="project-header" onclick="toggleProject('p7')">
+        <div class="project-header-left">
+          <div class="project-num">07</div>
+          <div class="project-meta">
+            <div class="project-client">Data Analysis</div>
+            <div class="project-title">SDG GDP Growth & Emissions Analysis</div>
+            <div class="project-tags-preview"><span class="tag">Power BI</span><span class="tag">Power Query</span><span class="tag">EDA</span></div>
+          </div>
+        </div>
+        <div class="project-toggle">+</div>
+      </div>
+      <div class="project-body">
+        <p class="project-desc-full">Explored the relationship between economic growth and CO₂/GHG emissions across Australia, Germany, and France using World Bank open data.</p>
+        <div class="project-highlights">
+          <div class="highlights-title">Project Highlights</div>
+          <ul class="highlight-list">
+            <li>Cleaned and merged multi-country World Bank datasets in Power Query</li>
+            <li>Built an interactive dashboard with line charts, bar charts, and box plots</li>
+            <li>Key finding: emissions rise with GDP, while pollution-related deaths track closely with air and water quality</li>
+          </ul>
+        </div>
+        <div class="project-footer">
+          <div class="tech-stack"><span class="tech-badge">Power BI</span><span class="tech-badge">Power Query</span><span class="tech-badge">EDA</span><span class="tech-badge">Data Viz</span></div>
+          <a href="https://github.com/AshrafNahlouse234669/portfolio" target="_blank" rel="noopener" class="project-link">View on GitHub ↗</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- EDUCATION -->
+<section class="section" id="education">
+  <div class="sec-label">04 / Education</div>
+  <h2>BACKGROUND</h2>
+  <div class="edu-item">
+    <div class="edu-year">2023 — present</div>
+    <div>
+      <div class="edu-title">Computer Science & Artificial Intelligence</div>
+      <div class="edu-school">Breda University of Applied Sciences (BUas) · Breda, NL</div>
+      <p class="edu-desc">Applied machine learning, data science, and AI engineering through real-world client projects. Hands-on experience across computer vision, NLP, reinforcement learning, and MLOps. Working in cross-functional teams to deliver production-ready AI solutions.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="sec-label">05 / Contact</div>
+  <h2>GET IN TOUCH</h2>
+  <p style="color:var(--muted);font-size:1.1rem;font-weight:300;font-style:italic;max-width:560px">I'm actively looking for a full-time internship (36–40 hrs/week). If you're working on interesting ML or AI problems, reach out — I'd love to talk.</p>
+  <div class="contact-grid">
+    <a href="mailto:Ashrafnahlouse@gmail.com" class="contact-cell">
+      <div class="contact-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></div>
+      <div><div class="contact-lbl">Email</div><div class="contact-val">Ashrafnahlouse@gmail.com</div></div>
+    </a>
+    <a href="tel:+31685242145" class="contact-cell">
+      <div class="contact-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg></div>
+      <div><div class="contact-lbl">Phone</div><div class="contact-val">+31 685 242 145</div></div>
+    </a>
+    <a href="https://linkedin.com/in/ashraf-nahlouse-7924ba396" target="_blank" rel="noopener" class="contact-cell">
+      <div class="contact-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
+      <div><div class="contact-lbl">LinkedIn</div><div class="contact-val">ashraf-nahlouse-7924ba396</div></div>
+    </a>
+    <a href="https://github.com/AshrafNahlouse234669" target="_blank" rel="noopener" class="contact-cell">
+      <div class="contact-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.929.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></div>
+      <div><div class="contact-lbl">GitHub</div><div class="contact-val">AshrafNahlouse234669</div></div>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Ashraf Nahlouse — Data Science & AI</p>
+  <p>Delft, Netherlands · <a href="mailto:Ashrafnahlouse@gmail.com">Ashrafnahlouse@gmail.com</a></p>
+</footer>
+
+<script>
+function toggleProject(id){
+  const item=document.getElementById(id);
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.project-item.open').forEach(el=>{
+    el.classList.remove('open');
+    el.querySelector('.project-toggle').textContent='+';
+  });
+  if(!isOpen){
+    item.classList.add('open');
+    item.querySelector('.project-toggle').textContent='−';
+    setTimeout(()=>item.scrollIntoView({behavior:'smooth',block:'nearest'}),50);
+  }
+}
+</script>
+</body>
+</html>
