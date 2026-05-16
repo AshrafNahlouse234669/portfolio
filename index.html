@@ -300,32 +300,41 @@ footer a{color:var(--red2);text-decoration:none}
           <div class="project-meta">
             <div class="project-client">ANWB</div>
             <div class="project-title">Road Safety Incident Prediction</div>
-            <div class="project-tags-preview"><span class="tag">Gradient Boosting</span><span class="tag">SQL</span><span class="tag">CNN</span></div>
+            <div class="project-tags-preview"><span class="tag">Gradient Boosting</span><span class="tag">SQL</span><span class="tag">Streamlit</span></div>
           </div>
         </div>
         <div class="project-toggle">+</div>
       </div>
       <div class="project-body">
-        <p class="project-intro">Predicting the type of driving incident a trip will produce — speeding, harsh braking, or cornering — using ANWB telematics data enriched with weather and road conditions.</p>
+        <p class="project-intro">Partnered with ANWB and the Municipality of Breda to predict reckless driving behaviours from real telematics data — building a system that identifies dangerous incidents before they escalate into accidents.</p>
         <div class="project-full-desc">
-          <p>ANWB provided driving behaviour data from real trips, but understanding what conditions lead to specific incident types required richer context. I merged this dataset with weather data and road condition datasets from a SQL data warehouse, giving the model environmental awareness alongside raw telemetry.</p>
-          <p>After thorough preprocessing — normalisation, duplicate handling, and categorical encoding — I iterated through Random Forest, Gradient Boosting, and CNN architectures. The tuned Gradient Boosting model was selected as the final model based on performance across all incident classes.</p>
-          <p>The project was deployed in two forms: a Streamlit web application for internal ANWB stakeholders to explore predictions, and a FlutterFlow mobile client app for end-user access — giving both technical and non-technical audiences a way to interact with the results.</p>
+          <p>The core problem: roads in Breda had unpredictable danger zones driven by changing weather, blocked sightlines, and areas where drivers consistently behaved recklessly — yet people were unaware of these hotspots. ANWB wanted a data-driven answer to the question: how can real-time data and analytics reduce road accidents?</p>
+          <p>Working as part of Team 9 with three classmates, I led the machine learning pipeline. ANWB provided raw driving telematics data, but predicting incident type required much richer context. I created SQL views to merge the driving dataset with external weather data and road condition sources, giving the model environmental awareness alongside raw trip telemetry. The full preprocessing pipeline covered view creation, missing value imputation, date column handling, categorical-to-numerical encoding, normalisation, distribution analysis, and K-Means clustering of high-risk locations.</p>
+          <p>Three model architectures were trained and compared: Random Forest, Gradient Boosting, and CNN. After 9 iterations with hyperparameter tuning on the merged dataset, the Gradient Boosting model achieved 84% accuracy and was selected as the final model. The project was classified as high-risk AI under the EU AI Act — Articles 6, 9, 10, 11, 13, 14, and 15 were reviewed and applied to ensure compliance with risk management, data governance, transparency, and human oversight requirements.</p>
+          <p>The system was deployed in two forms: a Streamlit application for internal ANWB stakeholders and municipality analysts to explore predictions and road risk patterns, and a FlutterFlow mobile app for ANWB customers to receive real-time alerts. The test suite achieved 99% coverage across both applications.</p>
         </div>
         <div class="block-title">Project Highlights</div>
         <ul class="highlight-list">
-          <li>Merged ANWB driving data with external weather and road condition sources via SQL warehouse</li>
-          <li>Preprocessed data: normalisation, duplicate handling, and categorical encoding</li>
-          <li>Iterated through Random Forest, Gradient Boosting, and CNN — landed on a tuned Gradient Boosting final model</li>
-          <li>Deployed as a Streamlit stakeholder app and a FlutterFlow mobile client app</li>
+          <li>Partnered with ANWB and Municipality of Breda — real client, real road safety impact</li>
+          <li>Built SQL views to merge telematics data with weather and road condition sources from a data warehouse</li>
+          <li>Full preprocessing pipeline: missing values, date handling, encoding, normalisation, distribution analysis, K-Means location clustering</li>
+          <li>Gradient Boosting achieved 84% accuracy after 9 iterations with hyperparameter tuning on the merged dataset</li>
+          <li>Classified as high-risk AI under EU AI Act — Articles 6, 9, 10, 11, 13, 14, 15 applied throughout</li>
+          <li>Deployed as Streamlit (stakeholders) and FlutterFlow mobile app (customers) with 99% test coverage</li>
         </ul>
         <div class="block-title">Key Takeaways</div>
         <ul class="takeaway-list">
-          <li>Enriching a dataset with external sources (weather, road conditions) meaningfully improves incident classification</li>
-          <li>Deploying for two audiences — technical stakeholders and end users — requires entirely different interface thinking</li>
+          <li>Merging telematics with weather and road condition data is what makes the model useful — raw trip data alone is not enough</li>
+          <li>High-risk AI classification under the EU AI Act adds real engineering obligations — transparency, human oversight, and documentation are not optional</li>
+          <li>Building for two audiences (stakeholder dashboard vs customer mobile app) requires completely different design thinking for the same underlying model</li>
+          <li>99% test coverage on deployed apps is achievable and sets a professional standard for client delivery</li>
         </ul>
+        <div class="pdf-block">
+          <div class="pdf-label">Final Presentation — ANWB</div>
+          <iframe class="pdf-embed" src="ANWB_presentation.pptx" title="ANWB Final Presentation" style="height:420px"></iframe>
+        </div>
         <div class="project-footer">
-          <div class="tech-stack"><span class="tech-badge">Gradient Boosting</span><span class="tech-badge">SQL</span><span class="tech-badge">CNN</span><span class="tech-badge">Streamlit</span><span class="tech-badge">FlutterFlow</span></div>
+          <div class="tech-stack"><span class="tech-badge">Gradient Boosting</span><span class="tech-badge">SQL</span><span class="tech-badge">K-Means</span><span class="tech-badge">Streamlit</span><span class="tech-badge">FlutterFlow</span><span class="tech-badge">EU AI Act</span></div>
         </div>
       </div>
     </div>
@@ -437,6 +446,7 @@ footer a{color:var(--red2);text-decoration:none}
           <li>Fairness Through Awareness: skin type as sensitive attribute; Equal Opportunity Difference = 0.025 identified and documented</li>
           <li>LIME (1000 perturbation samples) and Grad-CAM (last conv layer) applied for clinical-grade explainability</li>
           <li>Error analysis focused on false negatives — the highest clinical risk failure mode</li>
+          <li>Figma prototype designed and validated through think-aloud sessions and A/B testing</li>
         </ul>
         <div class="block-title">Key Takeaways</div>
         <ul class="takeaway-list">
