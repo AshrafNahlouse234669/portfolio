@@ -113,6 +113,12 @@ hr.divider{border:none;border-top:1px solid var(--border);max-width:1200px;margi
 .takeaway-list li{display:flex;gap:12px;font-size:1rem;color:var(--muted);font-weight:300;font-style:italic;line-height:1.6}
 .takeaway-list li::before{content:'◆';color:var(--red-dim);flex-shrink:0;font-size:0.7rem;margin-top:5px}
 
+/* Pipeline image block */
+.pipeline-block{margin-bottom:1.75rem}
+.pipeline-label{font-family:var(--font-mono);font-size:10px;color:var(--red2);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.75rem;display:flex;align-items:center;gap:10px}
+.pipeline-label::after{content:'';flex:1;height:1px;background:var(--border)}
+.pipeline-img{width:100%;border:1px solid var(--border);display:block}
+
 /* PDF embed */
 .pdf-block{margin-bottom:1.75rem}
 .pdf-label{font-family:var(--font-mono);font-size:10px;color:var(--red2);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.75rem;display:flex;align-items:center;gap:10px}
@@ -354,25 +360,38 @@ footer a{color:var(--red2);text-decoration:none}
         <div class="project-toggle">+</div>
       </div>
       <div class="project-body">
-        <p class="project-intro">A dual-track project for the Netherlands Plant Eco-phenotyping Centre: automating root measurement from images using computer vision, and training a robot to handle liquid inoculation using reinforcement learning.</p>
+        <p class="project-intro">A full end-to-end AI pipeline for the Netherlands Plant Eco-phenotyping Centre: automating root segmentation and measurement from Petri dish images using computer vision, then precisely delivering inoculants to identified root tips via a PID-controlled and RL-trained robotic arm.</p>
+
+        <!-- Pipeline image -->
+        <div class="pipeline-block">
+          <div class="pipeline-label">Full Pipeline — Vision to Inoculation</div>
+          <img class="pipeline-img" src="NPEC.png" alt="NPEC full pipeline: Original Image → Petri Dish Extraction → Plant Instance Segmentation → Root Prediction → Plant Inoculation"/>
+        </div>
+
         <div class="project-full-desc">
-          <p>NPEC researchers were manually measuring root lengths from Petri dish images — a time-consuming and inconsistent process. I built a U-Net segmentation pipeline that automatically identifies root structures and measures their length, reaching F1: 0.81 after iterating on BatchNorm layers, LeakyReLU activations, and learning rate scheduling.</p>
-          <p>In parallel, I designed and trained a PPO (Proximal Policy Optimisation) reinforcement learning agent in the PyBullet physics simulator. The agent was tasked with controlling a liquid-handling robot arm to perform inoculation — a physically precise task that requires the model to learn spatial reasoning and fine motor control entirely through reward signals.</p>
-          <p>Together, these two systems represent a complete automation pipeline for plant phenotyping: vision for measurement, and robotics for intervention.</p>
+          <p>The Netherlands Plant Eco-phenotyping Centre is at the forefront of sustainable agriculture research. A key challenge in the field is automating root segmentation from images to enable accurate root detection and analysis — and once roots are identified, precisely delivering inoculants to the correct root tips using robotics. This project addresses both challenges end-to-end.</p>
+          <p>On the computer vision side, I used semantic segmentation techniques to separate Petri dishes from background interference and isolate plant structures — seeds, shoots, and roots. After dataset refinement and preprocessing, I trained a U-Net model capable of predicting plant structure masks with high accuracy, achieving an F1 score of 0.85 for root mask prediction. Primary root length was measured precisely using Dijkstra's algorithm on the segmented output, giving researchers reliable, automated phenotyping data.</p>
+          <p>On the robotics side, the project focused on automating the delivery of inoculants to identified root tips using the OT-2 robot prototype. I developed a precision liquid-handling robot controller using a PID controller, ensuring accurate liquid dispensing and precise targeting of root tip locations on the Petri dish. This vision-to-robot integration demonstrated the full potential of combining image-based analysis with precision robotics for agricultural applications.</p>
+          <p>In addition to the PID controller, I implemented a Reinforcement Learning model using PPO (Proximal Policy Optimisation). By designing tailored reward functions and performing hyperparameter optimisation, the RL agent autonomously navigated to the correct root tips for liquid delivery. A comparative analysis between the two approaches revealed that the PID system achieved superior accuracy (under 1 mm precision), while the RL model excelled in speed, albeit with slightly reduced accuracy — demonstrating meaningful trade-offs between the two control strategies.</p>
         </div>
         <div class="block-title">Project Highlights</div>
         <ul class="highlight-list">
-          <li>Built a U-Net segmentation pipeline reaching F1: 0.81 for automated root length measurement</li>
-          <li>Iterated on BatchNorm, LeakyReLU, and LR scheduling to improve segmentation quality</li>
-          <li>Trained a PPO reinforcement learning agent in PyBullet for robotic liquid-handling control</li>
+          <li>Built a U-Net segmentation pipeline achieving F1: 0.85 for automated root mask prediction</li>
+          <li>Applied Dijkstra's algorithm for precise primary root length measurement from segmented outputs</li>
+          <li>Developed a PID-controlled liquid-handling robot achieving under 1 mm inoculation precision on the OT-2 prototype</li>
+          <li>Trained a PPO reinforcement learning agent to autonomously navigate and deliver liquid to root tips</li>
+          <li>Comparative analysis: PID outperforms RL on accuracy; RL outperforms PID on speed</li>
+          <li>Complete end-to-end pipeline: raw image → petri dish extraction → instance segmentation → root prediction → robotic inoculation</li>
         </ul>
         <div class="block-title">Key Takeaways</div>
         <ul class="takeaway-list">
-          <li>Iterative architectural improvements (BatchNorm, activation functions, scheduling) matter as much as model selection</li>
-          <li>RL agents in physics simulators require careful reward shaping — sparse rewards lead to very slow learning</li>
+          <li>Iterative architectural improvements (BatchNorm, activation functions, learning rate scheduling) matter as much as model selection for segmentation quality</li>
+          <li>PID controllers and RL agents are not interchangeable — the right choice depends on whether precision or speed is the priority</li>
+          <li>Reward function design is the hardest part of RL — sparse rewards in physical simulation environments lead to very slow convergence</li>
+          <li>Designing an end-to-end pipeline from concept to robot prototype requires integrating computer vision, algorithmic measurement, and precision control systems into a single coherent workflow</li>
         </ul>
         <div class="project-footer">
-          <div class="tech-stack"><span class="tech-badge">U-Net</span><span class="tech-badge">PyTorch</span><span class="tech-badge">PPO</span><span class="tech-badge">PyBullet</span><span class="tech-badge">Computer Vision</span></div>
+          <div class="tech-stack"><span class="tech-badge">U-Net</span><span class="tech-badge">PyTorch</span><span class="tech-badge">PPO</span><span class="tech-badge">PID Control</span><span class="tech-badge">OT-2 Robot</span><span class="tech-badge">Dijkstra</span><span class="tech-badge">Computer Vision</span></div>
         </div>
       </div>
     </div>
@@ -411,6 +430,10 @@ footer a{color:var(--red2);text-decoration:none}
           <li>Explainability is not an add-on — building it in from the start changes how you design and evaluate the model</li>
           <li>The gap between a working notebook and a production-ready system is where most of the real engineering happens</li>
         </ul>
+        <div class="pdf-block">
+          <div class="pdf-label">Full Report — Arabic Emotion Classification</div>
+          <iframe class="pdf-embed" src="NLP_Arabic_Emotion_Classification.pdf" title="Arabic Emotion Classification Report"></iframe>
+        </div>
         <div class="project-footer">
           <div class="tech-stack"><span class="tech-badge">MARBERT</span><span class="tech-badge">Whisper</span><span class="tech-badge">Azure ML</span><span class="tech-badge">FastAPI</span><span class="tech-badge">Docker</span><span class="tech-badge">XAI</span></div>
         </div>
