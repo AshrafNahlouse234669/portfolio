@@ -272,27 +272,38 @@ footer a{color:var(--red2);text-decoration:none}
         <div class="project-toggle">+</div>
       </div>
       <div class="project-body">
-        <p class="project-intro">Replacing manual truck loading decisions for one of the Benelux's largest kitchen manufacturers with an intelligent 3D bin packing system.</p>
+        <div style="display:inline-flex;align-items:center;gap:10px;border:1px solid var(--gold);border-radius:2px;padding:8px 16px;font-family:var(--font-mono);font-size:10px;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.5rem">🏆 Top 3 — Most Innovative · Best Business Value · Best Project Overall &nbsp;·&nbsp; BUas DS&AI</div>
+        <p class="project-intro">Replacing manual truck loading decisions for one of the Benelux's largest kitchen manufacturers with an intelligent 3D bin packing system — awarded Top 3 across three categories by BUas Data Science & AI mentors and supervisors.</p>
         <div class="project-full-desc">
-          <p>Kitchen cabinets present unique logistics challenges — they're bulky, fragile, and must be loaded in precise sequences to enable efficient unloading at multiple delivery stops. DKG was experiencing suboptimal truck utilisation (around 60%) due to manual loading decisions, resulting in increased transportation costs and safety risks.</p>
-          <p>I designed a 3D bin packing system using a DBLF (Deep Bottom-Left Fill) heuristic that enforces real-world constraints: LIFO (Last In First Out) requirements for multi-stop deliveries, Dutch ARBO law for safe weight distribution, and zero violations for fragile items. The system processes DKG's dataset of over 1 million items across thousands of transport orders.</p>
-          <p>The final deliverable is a Dockerised Streamlit application that covers the entire workflow in one pipeline — data cleaning, 3D loading optimisation, checklist generation, and printable sticker output — designed to be used directly by non-technical warehouse staff.</p>
+          <p>Kitchen cabinets present unique logistics challenges — they're bulky, fragile, and must be loaded in precise sequences to enable efficient unloading at multiple delivery stops. DKG Group, one of the largest kitchen manufacturers in the Benelux, was experiencing suboptimal truck utilisation (around 60%) due to manual loading decisions, resulting in increased transportation costs and safety risks.</p>
+          <p>I designed intelligent 3D bin packing algorithms that respect real-world constraints: LIFO (Last In First Out) requirements for multi-stop deliveries, fragility rules preventing stacking on delicate items, weight distribution for vehicle safety, and label visibility after rotation. The system processes DKG's dataset of over 1 million items across thousands of transport orders, comparing multiple algorithm approaches with real-world constraint validation at each stage.</p>
+          <p>Working directly with DKG's warehouse staff provided invaluable operational insights — weight distribution tracking, sectional load securing, and damage prevention strategies — that significantly improved algorithm design beyond what pure academic approaches would achieve. The final deliverable includes automated PDF generation for loading checklists and cabinet stickers, enabling seamless integration into existing warehouse workflows.</p>
         </div>
         <div class="block-title">Project Highlights</div>
         <ul class="highlight-list">
-          <li>Built a DBLF heuristic enforcing LIFO compliance, Dutch ARBO law, and zero fragile item violations across 1M+ items</li>
           <li>Complete data cleaning pipeline: dimension consolidation, unit error correction, missing value imputation via Random Forest Regressor</li>
+          <li>Built and compared multiple 3D bin packing algorithms with real-world constraint validation at each iteration</li>
           <li>Interactive 3D Plotly visualisation of loading sequences — usable by non-technical warehouse staff</li>
-          <li>Dockerised Streamlit app delivering data cleaning, truck loading, checklist, and sticker generation in one pipeline</li>
+          <li>Deployed as a containerised Streamlit app for local execution at DKG facilities</li>
+          <li>ARBO compliance validation and automated safety checkpoints for items over 23 kg</li>
+          <li>Automated PDF generation for loading checklists and printable cabinet stickers</li>
         </ul>
         <div class="block-title">Key Takeaways</div>
         <ul class="takeaway-list">
           <li>Translating complex logistics constraints (LIFO, fragility, weight distribution, rotation limits) into algorithmic rules requires deep domain understanding, not just technical skill</li>
           <li>Classical heuristics often outperform ML approaches for highly constrained optimisation problems</li>
+          <li>Systematic data quality issues surfaced through density analysis — distinguishing legitimate outliers from unit conversion errors requires careful investigation</li>
+          <li>Modular architecture separating data processing, optimisation, and visualisation paid dividends throughout the project — changes to one layer never broke another</li>
           <li>Delivering professional documentation and printable outputs for warehouse staff is as important as the algorithm itself</li>
         </ul>
+        <div class="pdf-block">
+          <div class="pdf-label">Demo — DKG Loading Optimizer App</div>
+          <div style="border:1px solid var(--border);overflow:hidden">
+            <div style="position:relative;width:100%;height:0px;padding-bottom:56.250%"><iframe allow="fullscreen" allowfullscreen height="100%" src="https://streamable.com/e/67cgwh?" width="100%" style="border:none;width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div>
+          </div>
+        </div>
         <div class="project-footer">
-          <div class="tech-stack"><span class="tech-badge">Python</span><span class="tech-badge">Streamlit</span><span class="tech-badge">Docker</span><span class="tech-badge">Plotly</span><span class="tech-badge">Heuristics</span><span class="tech-badge">Random Forest</span></div>
+          <div class="tech-stack"><span class="tech-badge">Python</span><span class="tech-badge">Streamlit</span><span class="tech-badge">Docker</span><span class="tech-badge">Plotly</span><span class="tech-badge">Heuristics</span><span class="tech-badge">Random Forest</span><span class="tech-badge">ARBO Compliance</span></div>
         </div>
       </div>
     </div>
