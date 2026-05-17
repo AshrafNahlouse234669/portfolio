@@ -254,16 +254,16 @@ footer a{color:var(--red2);text-decoration:none}
 <!-- ABOUT -->
 <section class="section" id="about">
   <div class="sec-label">01 / About</div>
-  <h2>WHO I AM</h2>
+  <div style="display:flex;align-items:center;gap:2rem;margin-bottom:3rem;flex-wrap:wrap">
+    <h2 style="margin-bottom:0">WHO I AM</h2>
+    <button onclick="toggleModal(true)" class="btn btn-ghost" style="font-size:15px;padding:0.9rem 2rem;letter-spacing:0.12em">More about me ↗</button>
+  </div>
   <div class="about-grid">
     <div class="about-text">
       <p>I'm a <strong>fourth-year Data Science & AI student</strong> at Breda University of Applied Sciences, passionate about applying machine learning to problems that actually matter.</p>
       <p>My work spans <em>computer vision, NLP, reinforcement learning, and MLOps</em> — always with an eye toward production-ready, deployable solutions. I've collaborated directly with industry clients including <strong>NPEC, NAC Breda, ANWB, and De Keuken Groep</strong>.</p>
       <p>I believe the best AI isn't just technically correct — it's explainable, fair, and built for real people. That philosophy runs through every project I build.</p>
       <p>Currently looking for a <strong>full-time internship starting as soon as possible</strong>, where I can contribute to data-driven innovation at scale.</p>
-      <div style="margin-top:1.75rem">
-        <button onclick="toggleModal(true)" class="btn btn-ghost">More about me ↗</button>
-      </div>
     </div>
     <div class="about-sidebar">
       <div class="sidebar-block">
