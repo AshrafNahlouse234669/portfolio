@@ -27,56 +27,55 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 3rem;background:rgba(12,10,10,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
 .nav-logo{font-family:var(--font-display);font-size:1.4rem;letter-spacing:0.1em;color:var(--red2)}
 .nav-links{display:flex;gap:2.5rem;list-style:none}
-.nav-links a{font-family:var(--font-mono);font-size:11px;color:var(--muted);text-decoration:none;letter-spacing:0.15em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a{font-family:var(--font-mono);font-size:13px;color:var(--muted);text-decoration:none;letter-spacing:0.15em;text-transform:uppercase;transition:color 0.2s}
 .nav-links a:hover{color:var(--text)}
 
 .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:8rem 3rem 4rem;max-width:1200px;margin:0 auto;gap:4rem;position:relative}
-.hero-eyebrow{font-family:var(--font-mono);font-size:11px;color:var(--red2);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:1.5rem;display:flex;align-items:center;gap:12px}
+.hero-eyebrow{font-family:var(--font-mono);font-size:13px;color:var(--red2);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:1.5rem;display:flex;align-items:center;gap:12px}
 .hero-eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--red2)}
 .hero h1{font-family:var(--font-display);font-size:clamp(4rem,9vw,8rem);line-height:0.9;letter-spacing:0.02em;margin-bottom:1.5rem;color:var(--text)}
 .hero h1 .last{-webkit-text-stroke:1px var(--red2);color:transparent;display:block}
-.hero-desc{font-size:1.1rem;color:var(--muted);font-weight:300;font-style:italic;max-width:460px;margin-bottom:2.5rem;line-height:1.9}
-.available{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--border2);border-radius:2px;padding:8px 18px;font-family:var(--font-mono);font-size:10px;color:var(--red2);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:2rem}
+.hero-desc{font-size:1.2rem;color:var(--muted);font-weight:300;font-style:italic;max-width:460px;margin-bottom:2.5rem;line-height:1.9}
+.available{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--border2);border-radius:2px;padding:8px 18px;font-family:var(--font-mono);font-size:12px;color:var(--red2);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:2rem}
 .pulse{width:7px;height:7px;border-radius:50%;background:var(--red2);animation:blink 2s ease-in-out infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
 .hero-cta{display:flex;gap:1rem;flex-wrap:wrap}
-.btn{font-family:var(--font-mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;padding:0.8rem 1.8rem;border-radius:2px;text-decoration:none;cursor:pointer;transition:all 0.2s;border:none;display:inline-flex;align-items:center;gap:8px}
+.btn{font-family:var(--font-mono);font-size:13px;letter-spacing:0.1em;text-transform:uppercase;padding:0.8rem 1.8rem;border-radius:2px;text-decoration:none;cursor:pointer;transition:all 0.2s;border:none;display:inline-flex;align-items:center;gap:8px}
 .btn-red{background:var(--red);color:#fff}.btn-red:hover{background:var(--red2)}
 .btn-ghost{background:transparent;color:var(--muted);border:1px solid var(--border2)}.btn-ghost:hover{color:var(--text);border-color:var(--muted2)}
 .hero-right{display:flex;flex-direction:column;gap:1rem}
 .hero-stat-block{border:1px solid var(--border);border-left:2px solid var(--red);padding:1.25rem 1.5rem;background:var(--bg2);position:relative;overflow:hidden}
 .hero-stat-block::before{content:'';position:absolute;top:0;right:0;width:60px;height:60px;background:var(--red-dim);border-radius:50%;transform:translate(20px,-20px)}
 .stat-n{font-family:var(--font-display);font-size:3rem;color:var(--red2);line-height:1;margin-bottom:4px}
-.stat-l{font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase}
+.stat-l{font-family:var(--font-mono);font-size:13px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase}
 .hero-stat-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 
 .section{max-width:1200px;margin:0 auto;padding:6rem 3rem}
-.sec-label{font-family:var(--font-mono);font-size:10px;color:var(--red);letter-spacing:0.25em;text-transform:uppercase;margin-bottom:0.5rem}
+.sec-label{font-family:var(--font-mono);font-size:13px;color:var(--red);letter-spacing:0.25em;text-transform:uppercase;margin-bottom:0.5rem}
 h2{font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);letter-spacing:0.04em;line-height:1;margin-bottom:3rem;color:var(--text)}
 hr.divider{border:none;border-top:1px solid var(--border);max-width:1200px;margin:0 auto}
 
 .about-grid{display:grid;grid-template-columns:3fr 2fr;gap:4rem;align-items:start}
-.about-text p{color:var(--muted);font-size:1.15rem;font-weight:300;margin-bottom:1.25rem;line-height:1.9}
+.about-text p{color:var(--muted);font-size:1.2rem;font-weight:300;margin-bottom:1.25rem;line-height:1.9}
 .about-text p strong{color:var(--text);font-weight:600}
 .about-text p em{color:var(--red2);font-style:italic}
 .sidebar-block{border:1px solid var(--border);border-top:2px solid var(--red);padding:1.5rem;background:var(--bg2);margin-bottom:1rem}
-.sidebar-title{font-family:var(--font-mono);font-size:10px;color:var(--red2);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.75rem}
-.lang-item{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--border);font-size:0.95rem}
+.sidebar-title{font-family:var(--font-mono);font-size:13px;color:var(--red2);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.75rem}
+.lang-item{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--border);font-size:1rem}
 .lang-item:last-child{border:none}
-.lang-level{font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:0.05em}
+.lang-level{font-family:var(--font-mono);font-size:12px;color:var(--muted);letter-spacing:0.05em}
 
 .skills-bg{background:var(--bg2)}
 .skills-inner{max-width:1200px;margin:0 auto;padding:6rem 3rem}
-.skill-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1px;border:1px solid var(--border);background:var(--border)}
+.skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:1px solid var(--border);background:var(--border)}
 .skill-cell{background:var(--bg2);padding:1.75rem;transition:background 0.2s}
 .skill-cell:hover{background:var(--bg3)}
 .skill-icon{font-size:1.4rem;margin-bottom:0.75rem;display:block}
-.skill-cell h3{font-family:var(--font-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--red2);margin-bottom:0.75rem}
+.skill-cell h3{font-family:var(--font-mono);font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--red2);margin-bottom:0.75rem}
 .tags{display:flex;flex-wrap:wrap;gap:5px}
-.tag{font-family:var(--font-mono);font-size:10px;padding:3px 9px;border:1px solid var(--border);color:var(--muted);letter-spacing:0.04em;border-radius:1px;transition:all 0.15s}
+.tag{font-family:var(--font-mono);font-size:12px;padding:4px 10px;border:1px solid var(--border);color:var(--muted);letter-spacing:0.04em;border-radius:1px;transition:all 0.15s}
 .skill-cell:hover .tag{border-color:var(--muted2);color:var(--text)}
 
-/* PROJECTS */
 .projects-timeline{position:relative;padding-left:3rem}
 .timeline-line{position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,var(--red) 10%,var(--red) 90%,transparent)}
 .project-item{position:relative;margin-bottom:1.5rem}
@@ -87,84 +86,136 @@ hr.divider{border:none;border-top:1px solid var(--border);max-width:1200px;margi
 .project-header-left{display:flex;align-items:center;gap:1.5rem;flex:1;min-width:0}
 .project-num{font-family:var(--font-display);font-size:2.5rem;color:var(--red-dim);line-height:1;flex-shrink:0;transition:color 0.2s;min-width:3rem}
 .project-item.open .project-num,.project-header:hover .project-num{color:var(--red2)}
-.project-client{font-family:var(--font-mono);font-size:10px;color:var(--red2);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:4px}
-.project-title{font-family:var(--font-display);font-size:1.6rem;letter-spacing:0.03em;color:var(--text);line-height:1.1}
+.project-client{font-family:var(--font-mono);font-size:13px;color:var(--red2);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:4px}
+.project-title{font-family:var(--font-display);font-size:1.8rem;letter-spacing:0.03em;color:var(--text);line-height:1.1}
 .project-tags-preview{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
 .project-toggle{flex-shrink:0;width:36px;height:36px;border:1px solid var(--border2);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--red2);font-size:1.4rem;line-height:1;transition:all 0.2s;font-family:var(--font-mono)}
 .project-item.open .project-toggle{background:var(--red);color:#fff;border-color:var(--red)}
 
 .project-body{display:none;background:var(--bg3);border:1px solid var(--border);border-top:none;border-left:3px solid var(--red);padding:2rem 2.5rem}
 .project-item.open .project-body{display:block}
-
-.project-intro{font-size:1.05rem;color:var(--muted);font-weight:300;line-height:1.9;margin-bottom:1.5rem;font-style:italic}
-
+.project-intro{font-size:1.15rem;color:var(--muted);font-weight:300;line-height:1.9;margin-bottom:1.5rem;font-style:italic}
 .project-full-desc{margin-bottom:1.75rem}
-.project-full-desc p{font-size:1rem;color:var(--muted);font-weight:300;line-height:1.85;margin-bottom:1rem}
+.project-full-desc p{font-size:1.1rem;color:var(--muted);font-weight:300;line-height:1.85;margin-bottom:1rem}
 .project-full-desc p:last-child{margin-bottom:0}
 
-.block-title{font-family:var(--font-mono);font-size:10px;color:var(--red2);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.75rem;display:flex;align-items:center;gap:10px}
+.block-title{font-family:var(--font-mono);font-size:13px;color:var(--red2);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.75rem;display:flex;align-items:center;gap:10px}
 .block-title::after{content:'';flex:1;height:1px;background:var(--border)}
 
 .highlight-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:1.75rem}
-.highlight-list li{display:flex;gap:12px;font-size:1rem;color:var(--muted);font-weight:300;line-height:1.6}
-.highlight-list li::before{content:'→';color:var(--red);flex-shrink:0;font-family:var(--font-mono);font-size:0.85rem;margin-top:2px}
+.highlight-list li{display:flex;gap:12px;font-size:1.1rem;color:var(--muted);font-weight:300;line-height:1.6}
+.highlight-list li::before{content:'→';color:var(--red);flex-shrink:0;font-family:var(--font-mono);font-size:0.9rem;margin-top:2px}
 
 .takeaway-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:1.75rem}
-.takeaway-list li{display:flex;gap:12px;font-size:1rem;color:var(--muted);font-weight:300;font-style:italic;line-height:1.6}
+.takeaway-list li{display:flex;gap:12px;font-size:1.1rem;color:var(--muted);font-weight:300;font-style:italic;line-height:1.6}
 .takeaway-list li::before{content:'◆';color:var(--red-dim);flex-shrink:0;font-size:0.7rem;margin-top:5px}
 
-/* Pipeline image block */
 .pipeline-block{margin-bottom:1.75rem}
-.pipeline-label{font-family:var(--font-mono);font-size:10px;color:var(--red2);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.75rem;display:flex;align-items:center;gap:10px}
+.pipeline-label{font-family:var(--font-mono);font-size:13px;color:var(--red2);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.75rem;display:flex;align-items:center;gap:10px}
 .pipeline-label::after{content:'';flex:1;height:1px;background:var(--border)}
 .pipeline-img{width:100%;border:1px solid var(--border);display:block}
 
-/* PDF embed */
 .pdf-block{margin-bottom:1.75rem}
-.pdf-label{font-family:var(--font-mono);font-size:10px;color:var(--red2);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.75rem;display:flex;align-items:center;gap:10px}
+.pdf-label{font-family:var(--font-mono);font-size:13px;color:var(--red2);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.75rem;display:flex;align-items:center;gap:10px}
 .pdf-label::after{content:'';flex:1;height:1px;background:var(--border)}
 .pdf-embed{width:100%;height:520px;border:1px solid var(--border);background:#1a1a1a}
 
 .project-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border)}
 .tech-stack{display:flex;flex-wrap:wrap;gap:5px}
-.tech-badge{font-family:var(--font-mono);font-size:10px;padding:3px 10px;border:1px solid var(--border2);color:var(--red2);letter-spacing:0.05em;border-radius:1px}
+.tech-badge{font-family:var(--font-mono);font-size:12px;padding:4px 11px;border:1px solid var(--border2);color:var(--red2);letter-spacing:0.05em;border-radius:1px}
 
 .edu-item{display:grid;grid-template-columns:140px 1fr;gap:2rem;padding:2rem 0;border-bottom:1px solid var(--border)}
 .edu-item:first-child{border-top:1px solid var(--border)}
-.edu-year{font-family:var(--font-mono);font-size:11px;color:var(--red);letter-spacing:0.1em;padding-top:4px}
+.edu-year{font-family:var(--font-mono);font-size:13px;color:var(--red);letter-spacing:0.1em;padding-top:4px}
 .edu-title{font-family:var(--font-display);font-size:1.6rem;letter-spacing:0.03em;margin-bottom:4px}
-.edu-school{font-family:var(--font-mono);font-size:11px;color:var(--red2);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.75rem}
-.edu-desc{font-size:1rem;color:var(--muted);font-weight:300;font-style:italic;line-height:1.8}
+.edu-school{font-family:var(--font-mono);font-size:13px;color:var(--red2);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.75rem}
+.edu-desc{font-size:1.1rem;color:var(--muted);font-weight:300;font-style:italic;line-height:1.8}
 
 .contact-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);margin-top:3rem}
 .contact-cell{background:var(--bg2);padding:1.75rem;text-decoration:none;color:var(--text);display:flex;align-items:flex-start;gap:1rem;transition:background 0.2s}
 .contact-cell:hover{background:var(--bg3)}
 .contact-ico{width:42px;height:42px;border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--red2)}
 .contact-ico svg{width:18px;height:18px}
-.contact-lbl{font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px}
-.contact-val{font-size:1rem;color:var(--text);font-weight:300}
+.contact-lbl{font-family:var(--font-mono);font-size:13px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px}
+.contact-val{font-size:1.05rem;color:var(--text);font-weight:300}
 
 footer{max-width:1200px;margin:0 auto;padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border)}
-footer p{font-family:var(--font-mono);font-size:10px;color:var(--muted2);letter-spacing:0.08em}
+footer p{font-family:var(--font-mono);font-size:12px;color:var(--muted2);letter-spacing:0.08em}
 footer a{color:var(--red2);text-decoration:none}
 
 .fade-in{opacity:0;transform:translateY(20px);animation:fi 0.6s ease forwards}
 @keyframes fi{to{opacity:1;transform:translateY(0)}}
 .d1{animation-delay:0.1s}.d2{animation-delay:0.2s}.d3{animation-delay:0.35s}.d4{animation-delay:0.5s}.d5{animation-delay:0.65s}
 
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.88);backdrop-filter:blur(10px);z-index:800;display:flex;align-items:flex-start;justify-content:center;padding:4rem 1.5rem 2rem;opacity:0;pointer-events:none;transition:opacity 0.3s;overflow-y:auto}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal{background:var(--bg2);border:1px solid var(--border);border-top:3px solid var(--red);max-width:760px;width:100%;padding:3rem;position:relative;transform:translateY(24px);transition:transform 0.3s;flex-shrink:0}
+.modal-overlay.open .modal{transform:translateY(0)}
+.modal-close{position:absolute;top:1.25rem;right:1.25rem;width:36px;height:36px;border:1px solid var(--border2);border-radius:50%;background:transparent;color:var(--red2);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s;font-family:var(--font-mono)}
+.modal-close:hover{background:var(--red);color:#fff;border-color:var(--red)}
+.modal-eyebrow{font-family:var(--font-mono);font-size:13px;color:var(--red);letter-spacing:0.25em;text-transform:uppercase;margin-bottom:0.4rem}
+.modal-title{font-family:var(--font-display);font-size:clamp(2rem,5vw,3rem);color:var(--text);letter-spacing:0.04em;line-height:1;margin-bottom:2.5rem}
+.modal-sec{margin-bottom:2.25rem}
+.modal-sec-label{font-family:var(--font-mono);font-size:13px;color:var(--red2);letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.75rem;display:flex;align-items:center;gap:10px}
+.modal-sec-label::after{content:'';flex:1;height:1px;background:var(--border)}
+.modal-sec p{font-size:1.1rem;color:var(--muted);font-weight:300;line-height:1.9;margin-bottom:0.9rem}
+.modal-sec p:last-child{margin-bottom:0}
+.modal-sec p strong{color:var(--text);font-weight:600}
+.modal-sec p em{color:var(--red2);font-style:italic}
+.modal-quote{border-left:3px solid var(--red);padding:1rem 1.5rem;margin:1.5rem 0;background:var(--bg3);font-size:1.1rem;color:var(--text);font-style:italic;font-weight:300;line-height:1.85}
+
 @media(max-width:768px){
   nav{padding:1rem 1.5rem}.nav-links{display:none}
   .hero{grid-template-columns:1fr;padding:7rem 1.5rem 3rem}.hero-right{display:none}
   .section,.skills-inner{padding:4rem 1.5rem}
   .about-grid{grid-template-columns:1fr}
+  .skill-grid{grid-template-columns:1fr}
   .projects-timeline{padding-left:2rem}
   .edu-item{grid-template-columns:1fr;gap:0.5rem}
   footer{flex-direction:column;gap:0.5rem;text-align:center;padding:1.5rem}
   .pdf-embed{height:320px}
+  .modal-overlay{padding:2rem 1rem 1rem}
+  .modal{padding:2rem 1.25rem}
 }
 </style>
 </head>
 <body>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="aboutModal" onclick="closeModal(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="toggleModal(false)">✕</button>
+    <div class="modal-eyebrow">The person behind the work</div>
+    <div class="modal-title">MORE ABOUT<br/>ASHRAF</div>
+
+    <div class="modal-sec">
+      <div class="modal-sec-label">Where I come from</div>
+      <p>I was born and raised in <strong>Latakia, Syria</strong> — a port city on the Mediterranean coast. I spent the first 20 years of my life there, surrounded by family who gave me everything they could to keep me moving forward. I'm grateful for that foundation more than I know how to express.</p>
+      <p>When the war came, it didn't ask for a schedule. I had to stop everything and leave — fast, without a real plan, not knowing what the other side looked like. The journey to Europe was one of the hardest stretches of my life. There were moments I'd rather not describe. But I had a direction, and that kept me going when nothing else did.</p>
+      <div class="modal-quote">"From a guy who arrived with nothing, to someone finishing his degree and building something real — that's the only story that matters to me."</div>
+      <p>Once I landed in <strong>the Netherlands</strong>, I started from zero. New language, completely different culture, no network. I pushed anyway. Slowly, a life got built — one semester, one project, one skill at a time.</p>
+    </div>
+
+    <div class="modal-sec">
+      <div class="modal-sec-label">Studies & what drives me</div>
+      <p>I'm 26, currently finishing my <strong>Bachelor's in Applied Data Science & AI</strong> at Breda University of Applied Sciences. The interest in computers started much earlier though — back in Syria, I went to an IT school in Latakia specifically because I wanted to learn to code. That was the beginning of the whole thing.</p>
+      <p>What keeps me going isn't just the technical side. It's the <em>why</em>. I want to work on problems that actually matter — agriculture, healthcare, climate, access to information. AI and ML are powerful tools, but the goal is always the real-world problem sitting behind them. That's what gets me out of bed.</p>
+    </div>
+
+    <div class="modal-sec">
+      <div class="modal-sec-label">Outside the laptop</div>
+      <p>Music is always on — whether I'm deep in code, at the gym, or just walking somewhere. It locks me into whatever I'm doing in a way nothing else does.</p>
+      <p>Sport is a constant too. I take training seriously — it keeps me sharp mentally as much as physically. And I genuinely enjoy the slower side of life as well: good food, long conversations, exploring wherever I am.</p>
+    </div>
+
+    <div class="modal-sec">
+      <div class="modal-sec-label">What I'm looking for</div>
+      <p>I want an internship where I'm actually <strong>contributing to something</strong> — not just running scripts, but helping design systems, thinking through problems, and growing as an engineer. I work hard, I ask the right questions, and I don't stop until it works.</p>
+      <p>If you're building something that matters and need someone who can hit the ground running — <em>reach out.</em></p>
+    </div>
+  </div>
+</div>
 
 <nav>
   <div class="nav-logo">AN.</div>
@@ -210,6 +261,9 @@ footer a{color:var(--red2);text-decoration:none}
       <p>My work spans <em>computer vision, NLP, reinforcement learning, and MLOps</em> — always with an eye toward production-ready, deployable solutions. I've collaborated directly with industry clients including <strong>NPEC, NAC Breda, ANWB, and De Keuken Groep</strong>.</p>
       <p>I believe the best AI isn't just technically correct — it's explainable, fair, and built for real people. That philosophy runs through every project I build.</p>
       <p>Currently looking for a <strong>full-time internship starting as soon as possible</strong>, where I can contribute to data-driven innovation at scale.</p>
+      <div style="margin-top:1.75rem">
+        <button onclick="toggleModal(true)" class="btn btn-ghost">More about me ↗</button>
+      </div>
     </div>
     <div class="about-sidebar">
       <div class="sidebar-block">
@@ -257,7 +311,7 @@ footer a{color:var(--red2);text-decoration:none}
   <div class="projects-timeline">
     <div class="timeline-line"></div>
 
-    <!-- P1: DKG -->
+    <!-- P1 -->
     <div class="project-item" id="p1">
       <div class="timeline-dot"></div>
       <div class="project-header" onclick="toggleProject('p1')">
@@ -272,7 +326,7 @@ footer a{color:var(--red2);text-decoration:none}
         <div class="project-toggle">+</div>
       </div>
       <div class="project-body">
-        <div style="display:inline-flex;align-items:center;gap:10px;border:1px solid var(--gold);border-radius:2px;padding:8px 16px;font-family:var(--font-mono);font-size:10px;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.5rem">🏆 Top 3 — Most Innovative · Best Business Value · Best Project Overall &nbsp;·&nbsp; BUas DS&AI</div>
+        <div style="display:inline-flex;align-items:center;gap:10px;border:1px solid var(--gold);border-radius:2px;padding:8px 16px;font-family:var(--font-mono);font-size:12px;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.5rem">🏆 Top 3 — Most Innovative · Best Business Value · Best Project Overall · BUas DS&amp;AI</div>
         <p class="project-intro">Replacing manual truck loading decisions for one of the Benelux's largest kitchen manufacturers with an intelligent 3D bin packing system — awarded Top 3 across three categories by BUas Data Science & AI mentors and supervisors.</p>
         <div class="project-full-desc">
           <p>Kitchen cabinets present unique logistics challenges — they're bulky, fragile, and must be loaded in precise sequences to enable efficient unloading at multiple delivery stops. DKG Group, one of the largest kitchen manufacturers in the Benelux, was experiencing suboptimal truck utilisation (around 60%) due to manual loading decisions, resulting in increased transportation costs and safety risks.</p>
@@ -293,13 +347,13 @@ footer a{color:var(--red2);text-decoration:none}
           <li>Translating complex logistics constraints (LIFO, fragility, weight distribution, rotation limits) into algorithmic rules requires deep domain understanding, not just technical skill</li>
           <li>Classical heuristics often outperform ML approaches for highly constrained optimisation problems</li>
           <li>Systematic data quality issues surfaced through density analysis — distinguishing legitimate outliers from unit conversion errors requires careful investigation</li>
-          <li>Modular architecture separating data processing, optimisation, and visualisation paid dividends throughout the project — changes to one layer never broke another</li>
+          <li>Modular architecture separating data processing, optimisation, and visualisation paid dividends throughout — changes to one layer never broke another</li>
           <li>Delivering professional documentation and printable outputs for warehouse staff is as important as the algorithm itself</li>
         </ul>
         <div class="pdf-block">
           <div class="pdf-label">Demo — DKG Loading Optimizer App</div>
           <div style="border:1px solid var(--border);overflow:hidden">
-            <div style="position:relative;width:100%;height:0px;padding-bottom:56.250%"><iframe allow="fullscreen" allowfullscreen height="100%" src="https://streamable.com/e/67cgwh?" width="100%" style="border:none;width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div>
+            <div style="position:relative;width:100%;height:0;padding-bottom:56.25%"><iframe allow="fullscreen" allowfullscreen height="100%" src="https://streamable.com/e/67cgwh?" width="100%" style="border:none;width:100%;height:100%;position:absolute;left:0;top:0;overflow:hidden;"></iframe></div>
           </div>
         </div>
         <div class="project-footer">
@@ -308,7 +362,7 @@ footer a{color:var(--red2);text-decoration:none}
       </div>
     </div>
 
-    <!-- P2: ANWB -->
+    <!-- P2 -->
     <div class="project-item" id="p2">
       <div class="timeline-dot"></div>
       <div class="project-header" onclick="toggleProject('p2')">
@@ -325,26 +379,24 @@ footer a{color:var(--red2);text-decoration:none}
       <div class="project-body">
         <p class="project-intro">Partnered with ANWB and the Municipality of Breda to predict reckless driving behaviours from real telematics data — building a system that identifies dangerous incidents before they escalate into accidents.</p>
         <div class="project-full-desc">
-          <p>The core problem: roads in Breda had unpredictable danger zones driven by changing weather, blocked sightlines, and areas where drivers consistently behaved recklessly — yet people were unaware of these hotspots. ANWB wanted a data-driven answer to the question: how can real-time data and analytics reduce road accidents?</p>
-          <p>Working as part of Team 9 with three classmates, I led the machine learning pipeline. ANWB provided raw driving telematics data, but predicting incident type required much richer context. I created SQL views to merge the driving dataset with external weather data and road condition sources, giving the model environmental awareness alongside raw trip telemetry. The full preprocessing pipeline covered view creation, missing value imputation, date column handling, categorical-to-numerical encoding, normalisation, distribution analysis, and K-Means clustering of high-risk locations.</p>
-          <p>Three model architectures were trained and compared: Random Forest, Gradient Boosting, and CNN. After 9 iterations with hyperparameter tuning on the merged dataset, the Gradient Boosting model achieved 84% accuracy and was selected as the final model. The project was classified as high-risk AI under the EU AI Act — Articles 6, 9, 10, 11, 13, 14, and 15 were reviewed and applied to ensure compliance with risk management, data governance, transparency, and human oversight requirements.</p>
-          <p>The system was deployed in two forms: a Streamlit application for internal ANWB stakeholders and municipality analysts to explore predictions and road risk patterns, and a FlutterFlow mobile app for ANWB customers to receive real-time alerts. The test suite achieved 99% coverage across both applications.</p>
+          <p>Roads in Breda had unpredictable danger zones driven by changing weather, blocked sightlines, and areas where drivers consistently behaved recklessly — yet people were unaware of these hotspots. ANWB wanted a data-driven answer: how can real-time data and analytics reduce road accidents?</p>
+          <p>I led the machine learning pipeline for Team 9. ANWB provided raw driving telematics data, but predicting incident type required much richer context. I created SQL views to merge the driving dataset with external weather data and road condition sources. The full preprocessing pipeline covered view creation, missing value imputation, date column handling, encoding, normalisation, distribution analysis, and K-Means clustering of high-risk locations.</p>
+          <p>Three model architectures were trained and compared: Random Forest, Gradient Boosting, and CNN. After 9 iterations with hyperparameter tuning, the Gradient Boosting model achieved 84% accuracy. The project was classified as high-risk AI under the EU AI Act — Articles 6, 9, 10, 11, 13, 14, and 15 were applied throughout.</p>
+          <p>The system was deployed as a Streamlit application for internal ANWB stakeholders and a FlutterFlow mobile app for ANWB customers. The test suite achieved 99% coverage across both.</p>
         </div>
         <div class="block-title">Project Highlights</div>
         <ul class="highlight-list">
-          <li>Partnered with ANWB and Municipality of Breda — real client, real road safety impact</li>
           <li>Built SQL views to merge telematics data with weather and road condition sources from a data warehouse</li>
-          <li>Full preprocessing pipeline: missing values, date handling, encoding, normalisation, distribution analysis, K-Means location clustering</li>
-          <li>Gradient Boosting achieved 84% accuracy after 9 iterations with hyperparameter tuning on the merged dataset</li>
-          <li>Classified as high-risk AI under EU AI Act — Articles 6, 9, 10, 11, 13, 14, 15 applied throughout</li>
+          <li>Full preprocessing pipeline: missing values, date handling, encoding, normalisation, K-Means location clustering</li>
+          <li>Gradient Boosting achieved 84% accuracy after 9 iterations with hyperparameter tuning</li>
+          <li>Classified as high-risk AI under EU AI Act — Articles 6, 9, 10, 11, 13, 14, 15 applied</li>
           <li>Deployed as Streamlit (stakeholders) and FlutterFlow mobile app (customers) with 99% test coverage</li>
         </ul>
         <div class="block-title">Key Takeaways</div>
         <ul class="takeaway-list">
           <li>Merging telematics with weather and road condition data is what makes the model useful — raw trip data alone is not enough</li>
-          <li>High-risk AI classification under the EU AI Act adds real engineering obligations — transparency, human oversight, and documentation are not optional</li>
-          <li>Building for two audiences (stakeholder dashboard vs customer mobile app) requires completely different design thinking for the same underlying model</li>
-          <li>99% test coverage on deployed apps is achievable and sets a professional standard for client delivery</li>
+          <li>High-risk AI classification under the EU AI Act adds real engineering obligations — transparency and human oversight are not optional</li>
+          <li>Building for two audiences (stakeholder dashboard vs customer mobile app) requires completely different design thinking for the same model</li>
         </ul>
         <div class="pdf-block">
           <div class="pdf-label">Final Presentation — ANWB</div>
@@ -356,7 +408,7 @@ footer a{color:var(--red2);text-decoration:none}
       </div>
     </div>
 
-    <!-- P3: NPEC -->
+    <!-- P3 -->
     <div class="project-item" id="p3">
       <div class="timeline-dot"></div>
       <div class="project-header" onclick="toggleProject('p3')">
@@ -372,34 +424,29 @@ footer a{color:var(--red2);text-decoration:none}
       </div>
       <div class="project-body">
         <p class="project-intro">A full end-to-end AI pipeline for the Netherlands Plant Eco-phenotyping Centre: automating root segmentation and measurement from Petri dish images using computer vision, then precisely delivering inoculants to identified root tips via a PID-controlled and RL-trained robotic arm.</p>
-
-        <!-- Pipeline image -->
         <div class="pipeline-block">
           <div class="pipeline-label">Full Pipeline — Vision to Inoculation</div>
-          <img class="pipeline-img" src="NPEC.png" alt="NPEC full pipeline: Original Image → Petri Dish Extraction → Plant Instance Segmentation → Root Prediction → Plant Inoculation"/>
+          <img class="pipeline-img" src="NPEC.png" alt="NPEC pipeline: Original Image to Petri Dish Extraction to Plant Instance Segmentation to Root Prediction to Plant Inoculation"/>
         </div>
-
         <div class="project-full-desc">
-          <p>The Netherlands Plant Eco-phenotyping Centre is at the forefront of sustainable agriculture research. A key challenge in the field is automating root segmentation from images to enable accurate root detection and analysis — and once roots are identified, precisely delivering inoculants to the correct root tips using robotics. This project addresses both challenges end-to-end.</p>
-          <p>On the computer vision side, I used semantic segmentation techniques to separate Petri dishes from background interference and isolate plant structures — seeds, shoots, and roots. After dataset refinement and preprocessing, I trained a U-Net model capable of predicting plant structure masks with high accuracy, achieving an F1 score of 0.85 for root mask prediction. Primary root length was measured precisely using Dijkstra's algorithm on the segmented output, giving researchers reliable, automated phenotyping data.</p>
-          <p>On the robotics side, the project focused on automating the delivery of inoculants to identified root tips using the OT-2 robot prototype. I developed a precision liquid-handling robot controller using a PID controller, ensuring accurate liquid dispensing and precise targeting of root tip locations on the Petri dish. This vision-to-robot integration demonstrated the full potential of combining image-based analysis with precision robotics for agricultural applications.</p>
-          <p>In addition to the PID controller, I implemented a Reinforcement Learning model using PPO (Proximal Policy Optimisation). By designing tailored reward functions and performing hyperparameter optimisation, the RL agent autonomously navigated to the correct root tips for liquid delivery. A comparative analysis between the two approaches revealed that the PID system achieved superior accuracy (under 1 mm precision), while the RL model excelled in speed, albeit with slightly reduced accuracy — demonstrating meaningful trade-offs between the two control strategies.</p>
+          <p>The Netherlands Plant Eco-phenotyping Centre is at the forefront of sustainable agriculture research. A key challenge: automating root segmentation from images to enable accurate root detection, then precisely delivering inoculants to the correct root tips using robotics. This project addresses both end-to-end.</p>
+          <p>On the vision side, I built a U-Net segmentation pipeline that separates Petri dishes from background interference and isolates plant structures — seeds, shoots, and roots — achieving F1: 0.85 for root mask prediction. Primary root length was then measured using Dijkstra's algorithm on the segmented output.</p>
+          <p>On the robotics side, I developed a PID controller for the OT-2 liquid-handling robot, achieving under 1 mm inoculation precision. In parallel, I trained a PPO reinforcement learning agent that autonomously navigated to the correct root tips. The comparative analysis showed PID wins on accuracy; RL wins on speed.</p>
         </div>
         <div class="block-title">Project Highlights</div>
         <ul class="highlight-list">
-          <li>Built a U-Net segmentation pipeline achieving F1: 0.85 for automated root mask prediction</li>
-          <li>Applied Dijkstra's algorithm for precise primary root length measurement from segmented outputs</li>
-          <li>Developed a PID-controlled liquid-handling robot achieving under 1 mm inoculation precision on the OT-2 prototype</li>
-          <li>Trained a PPO reinforcement learning agent to autonomously navigate and deliver liquid to root tips</li>
-          <li>Comparative analysis: PID outperforms RL on accuracy; RL outperforms PID on speed</li>
-          <li>Complete end-to-end pipeline: raw image → petri dish extraction → instance segmentation → root prediction → robotic inoculation</li>
+          <li>U-Net segmentation pipeline achieving F1: 0.85 for automated root mask prediction</li>
+          <li>Dijkstra's algorithm for precise primary root length measurement from segmented outputs</li>
+          <li>PID-controlled liquid-handling robot achieving under 1 mm inoculation precision on the OT-2 prototype</li>
+          <li>PPO RL agent trained to autonomously navigate and deliver liquid to root tips</li>
+          <li>PID vs RL comparative analysis: accuracy vs speed trade-off documented</li>
+          <li>Complete pipeline: raw image → extraction → segmentation → root prediction → robotic inoculation</li>
         </ul>
         <div class="block-title">Key Takeaways</div>
         <ul class="takeaway-list">
-          <li>Iterative architectural improvements (BatchNorm, activation functions, learning rate scheduling) matter as much as model selection for segmentation quality</li>
-          <li>PID controllers and RL agents are not interchangeable — the right choice depends on whether precision or speed is the priority</li>
-          <li>Reward function design is the hardest part of RL — sparse rewards in physical simulation environments lead to very slow convergence</li>
-          <li>Designing an end-to-end pipeline from concept to robot prototype requires integrating computer vision, algorithmic measurement, and precision control systems into a single coherent workflow</li>
+          <li>Iterative architectural improvements (BatchNorm, activation functions, LR scheduling) matter as much as model selection</li>
+          <li>PID and RL are not interchangeable — the right choice depends on whether precision or speed is the priority</li>
+          <li>Reward function design is the hardest part of RL — sparse rewards in physical simulation lead to very slow convergence</li>
         </ul>
         <div class="project-footer">
           <div class="tech-stack"><span class="tech-badge">U-Net</span><span class="tech-badge">PyTorch</span><span class="tech-badge">PPO</span><span class="tech-badge">PID Control</span><span class="tech-badge">OT-2 Robot</span><span class="tech-badge">Dijkstra</span><span class="tech-badge">Computer Vision</span></div>
@@ -407,7 +454,7 @@ footer a{color:var(--red2);text-decoration:none}
       </div>
     </div>
 
-    <!-- P4: Arabic NLP -->
+    <!-- P4 -->
     <div class="project-item" id="p4">
       <div class="timeline-dot"></div>
       <div class="project-header" onclick="toggleProject('p4')">
@@ -424,21 +471,20 @@ footer a{color:var(--red2);text-decoration:none}
       <div class="project-body">
         <p class="project-intro">An end-to-end NLP pipeline that classifies 7 emotional states from Arabic video content — transcribing speech, translating it, classifying emotion, and explaining model decisions, all the way to cloud deployment.</p>
         <div class="project-full-desc">
-          <p>Arabic NLP presents unique challenges: the language is morphologically rich, dialectally diverse, and underrepresented in standard NLP toolchains. This project tackled the full pipeline from raw video to deployed model.</p>
-          <p>Whisper was used for high-quality Arabic speech transcription. A pretrained translation model converted Arabic text to English to enable cross-lingual transfer. The emotion classifier itself was MARBERT — a transformer model specifically pre-trained on Arabic text — fine-tuned on a dataset of 39,000+ labelled sentences across 7 emotion categories, achieving F1: 73.</p>
-          <p>Explainability was built in from the start: SHAP and LIME were applied to make model decisions interpretable, not just accurate. The entire system was then productionised — wrapped in a FastAPI backend, a CLI tool, a Streamlit interface, containerised with Docker, and deployed to Azure ML for scalable inference.</p>
+          <p>Arabic NLP presents unique challenges: morphologically rich, dialectally diverse, and underrepresented in standard toolchains. This project tackled the full pipeline from raw video to deployed model.</p>
+          <p>Whisper handled Arabic speech transcription. A pretrained translation model converted Arabic text to English for cross-lingual transfer. The emotion classifier — MARBERT fine-tuned on 39,000+ labelled sentences across 7 emotion categories — achieved F1: 73. SHAP and LIME were applied for interpretability. The full stack: FastAPI, CLI, Streamlit, Docker, and Azure ML deployment.</p>
         </div>
         <div class="block-title">Project Highlights</div>
         <ul class="highlight-list">
-          <li>Used Whisper for Arabic audio transcription and a pretrained model for English translation</li>
-          <li>Fine-tuned MARBERT on 39,000+ labelled sentences, achieving F1: 73 across 7 emotion classes</li>
-          <li>Applied XAI techniques (SHAP, LIME) for model interpretability</li>
-          <li>Full production stack: FastAPI, CLI, Streamlit, Docker, and Azure ML deployment</li>
+          <li>Whisper for Arabic audio transcription + pretrained model for English translation</li>
+          <li>Fine-tuned MARBERT on 39,000+ labelled sentences — F1: 73 across 7 emotion classes</li>
+          <li>XAI techniques (SHAP, LIME) applied for model interpretability</li>
+          <li>Full production stack: FastAPI, CLI, Streamlit, Docker, Azure ML</li>
         </ul>
         <div class="block-title">Key Takeaways</div>
         <ul class="takeaway-list">
           <li>Arabic-specific pretrained models (MARBERT) dramatically outperform multilingual alternatives for this task</li>
-          <li>Explainability is not an add-on — building it in from the start changes how you design and evaluate the model</li>
+          <li>Explainability built in from the start changes how you design and evaluate the model</li>
           <li>The gap between a working notebook and a production-ready system is where most of the real engineering happens</li>
         </ul>
         <div class="pdf-block">
@@ -451,7 +497,7 @@ footer a{color:var(--red2);text-decoration:none}
       </div>
     </div>
 
-    <!-- P5: Skin -->
+    <!-- P5 -->
     <div class="project-item" id="p5">
       <div class="timeline-dot"></div>
       <div class="project-header" onclick="toggleProject('p5')">
@@ -466,32 +512,29 @@ footer a{color:var(--red2);text-decoration:none}
         <div class="project-toggle">+</div>
       </div>
       <div class="project-body">
-        <p class="project-intro">A CNN classifying benign vs malignant skin lesions — designed with explainability and skin tone fairness as core requirements from day one. Built through four model iterations from a simple CNN to MobileNetV2 transfer learning, reaching 92% accuracy.</p>
+        <p class="project-intro">A CNN classifying benign vs malignant skin lesions — designed with explainability and skin tone fairness as core requirements from day one. Four model iterations from a simple CNN to MobileNetV2 transfer learning, reaching 92% accuracy.</p>
         <div class="project-full-desc">
-          <p>Dermatology AI has a well-documented problem: most existing systems were trained on datasets skewed toward lighter skin tones, leaving patients with darker complexions underserved. Misdiagnosis disproportionately affects minority communities at precisely the moments when early detection matters most. This project was built to address that gap directly.</p>
-          <p>The dataset was self-curated across three methods: web scraping with Selenium and Firefox WebDriver, manual collection from dermatology sources, and bulk images from Kaggle. The modelling journey was iterative and deliberate — Iteration 1 established a clean custom CNN baseline. Iteration 2 added Dropout(0.5) and full data augmentation (rotation, zoom, shear, horizontal flip). Iteration 3 introduced MobileNetV2 pre-trained on ImageNet with a frozen base and a custom classification head, jumping accuracy to 92%. Iteration 4 reduced input size to 160x160 as a deliberate speed/accuracy trade-off.</p>
-          <p>Fairness was embedded throughout using a Fairness Through Awareness approach — explicitly annotating skin type as a sensitive attribute, and defining a similarity metric that accounts for how the same condition manifests differently across skin tones. Group fairness metrics were computed, and an Equal Opportunity Difference of 0.025 was identified and documented as residual bias requiring mitigation in a deployed system.</p>
-          <p>Explainability was applied via LIME (1000 perturbation samples to identify influential image regions) and Grad-CAM (gradients through the last convolutional layer producing a heatmap clinicians can read directly). Error analysis on the final model specifically focused on false negatives — predicting benign when malignant — which carry the greatest clinical risk. Human-level performance was benchmarked at ~45.8% across five peers; the final model at 92% substantially exceeds both the 52% random baseline and human performance.</p>
+          <p>Most dermatology AI systems were trained on datasets skewed toward lighter skin tones, leaving patients with darker complexions underserved. This project was built to address that directly.</p>
+          <p>Dataset self-curated via Selenium scraping, manual collection, and Kaggle. Four model iterations: custom CNN baseline → Dropout + augmentation → MobileNetV2 transfer learning (92% accuracy) → 160x160 speed trade-off. Fairness Through Awareness was applied throughout — skin type as explicit sensitive attribute, Equal Opportunity Difference = 0.025 identified and documented. LIME (1000 perturbation samples) and Grad-CAM applied for clinical-grade explainability. Error analysis focused on false negatives — the highest clinical risk failure mode.</p>
         </div>
         <div class="block-title">Project Highlights</div>
         <ul class="highlight-list">
-          <li>Four model iterations: MLP baseline → custom CNN → CNN + Dropout/Augmentation → MobileNetV2 transfer learning (92% accuracy, F1: 0.92)</li>
-          <li>Dataset self-curated via Selenium scraping, manual collection, and Kaggle to ensure diverse skin tone representation</li>
-          <li>Fairness Through Awareness: skin type as sensitive attribute; Equal Opportunity Difference = 0.025 identified and documented</li>
-          <li>LIME (1000 perturbation samples) and Grad-CAM (last conv layer) applied for clinical-grade explainability</li>
-          <li>Error analysis focused on false negatives — the highest clinical risk failure mode</li>
-          <li>Figma prototype designed and validated through think-aloud sessions and A/B testing</li>
+          <li>Four iterations: MLP → custom CNN → CNN + Dropout/Augmentation → MobileNetV2 (92% accuracy, F1: 0.92)</li>
+          <li>Dataset curated via Selenium scraping, manual collection, and Kaggle for diverse skin tone coverage</li>
+          <li>Fairness Through Awareness: skin type as sensitive attribute; EOD = 0.025 identified and documented</li>
+          <li>LIME (1000 samples) and Grad-CAM for clinical-grade explainability</li>
+          <li>Figma prototype validated through think-aloud sessions and A/B testing</li>
         </ul>
         <div class="block-title">Key Takeaways</div>
         <ul class="takeaway-list">
           <li>MobileNetV2 transfer learning jumps accuracy from ~86% to 92% — ImageNet features transfer powerfully even to medical imaging</li>
-          <li>Fairness requires intentional data curation and explicit sensitive attribute handling from the start, not post-hoc fixes</li>
+          <li>Fairness requires intentional data curation from the start, not post-hoc fixes</li>
           <li>In medical AI, recall for the malignant class matters more than overall accuracy — a false negative can cost a life</li>
-          <li>Grad-CAM heatmaps are the difference between a model clinicians trust and one they will not use</li>
+          <li>Grad-CAM heatmaps are the difference between a model clinicians trust and one they won't use</li>
         </ul>
         <div class="pdf-block">
           <div class="pdf-label">DAPS Diagram</div>
-          <iframe class="pdf-embed" src="DAPS_diagram.pdf" title="AI Skin Disease Classifier DAPS Diagram" style="height:380px"></iframe>
+          <iframe class="pdf-embed" src="DAPS_diagram.pdf" title="DAPS Diagram" style="height:380px"></iframe>
         </div>
         <div class="pdf-block">
           <div class="pdf-label">Full Report — Block C Creative Brief</div>
@@ -503,7 +546,7 @@ footer a{color:var(--red2);text-decoration:none}
       </div>
     </div>
 
-    <!-- P6: NAC Breda FOOTBALL -->
+    <!-- P6 -->
     <div class="project-item" id="p6">
       <div class="timeline-dot"></div>
       <div class="project-header" onclick="toggleProject('p6')">
@@ -520,19 +563,17 @@ footer a{color:var(--red2);text-decoration:none}
       <div class="project-body">
         <p class="project-intro">Analysed professional football players across 114 metrics to predict market value and optimal playing positions — built as a data-driven scouting tool for NAC Breda's analytics team.</p>
         <div class="project-full-desc">
-          <p>Football clubs face a persistent challenge: placing players in the positions where they'll perform best. NAC Breda operates in a competitive league environment where every squad decision carries weight, and there's almost no room to trial a player in an unfamiliar role mid-season. This project builds the data infrastructure to answer that question before it goes on the pitch.</p>
-          <p>I developed a multi-class classification pipeline trained on European football player statistics, processing 114 features including physical attributes, passing metrics, defensive contributions, and attacking output. Multiple models were trained and compared — with Random Forest delivering the strongest classification results for position prediction. In parallel, a Ridge + TruncatedSVD regression pipeline achieved R² = 0.889 for predicting expected assists (xA per 90).</p>
-          <p>Beyond the models, I built a full MySQL database management system for persistent data storage, implemented gradient descent from scratch using NumPy to validate the regression approach, and delivered a Streamlit application allowing NAC Breda analysts to upload updated player data and immediately visualise team market value comparisons without writing code.</p>
-          <p>Ethical considerations were central to this project: I documented the class imbalance problem honestly (the 99.88% accuracy figures were an artefact of imbalanced classes, not genuine performance), applied GDPR analysis to the data pipeline, and proposed fairness auditing recommendations for ongoing model use.</p>
+          <p>NAC Breda needed a data-driven way to answer a persistent question: where does a player actually perform best? With 114 features — physical, passing, defensive, attacking — I built a multi-class classification pipeline where Random Forest delivered the strongest position prediction results. A Ridge + TruncatedSVD pipeline achieved R² = 0.889 for predicting expected assists (xA per 90).</p>
+          <p>Beyond the models: a full MySQL database management system, gradient descent implemented from scratch in NumPy to validate the regression, and a Streamlit app for live market value comparisons — all delivered to the client. Ethical documentation was central: class imbalance was honestly reported and GDPR analysis applied throughout.</p>
         </div>
         <div class="block-title">Project Highlights</div>
         <ul class="highlight-list">
-          <li>Ran 20 EDA questions on market value, xG, position performance, and contract duration across 114 features</li>
-          <li>Trained Linear Regression, Logistic Regression, Decision Tree, Random Forest, Gradient Boosting, SVM, KMeans, and XGBoost</li>
-          <li>Achieved R² = 0.889 on xA per 90 prediction using a Ridge + TruncatedSVD pipeline</li>
-          <li>Built a MySQL database management system with create, query, and list operations</li>
-          <li>Built a Streamlit app for interactive team market value visualisation</li>
-          <li>Implemented gradient descent from scratch with NumPy to predict market value</li>
+          <li>20 EDA questions across market value, xG, position performance, and contract duration</li>
+          <li>Trained and compared 8 model types including Random Forest, XGBoost, SVM, and KMeans</li>
+          <li>R² = 0.889 on xA per 90 prediction using Ridge + TruncatedSVD</li>
+          <li>MySQL database management system with create, query, and list operations</li>
+          <li>Gradient descent implemented from scratch with NumPy to predict market value</li>
+          <li>Streamlit app for interactive team market value visualisation</li>
         </ul>
         <div class="block-title">Key Takeaways</div>
         <ul class="takeaway-list">
@@ -550,7 +591,7 @@ footer a{color:var(--red2);text-decoration:none}
       </div>
     </div>
 
-    <!-- P7: SDG -->
+    <!-- P7 -->
     <div class="project-item" id="p7">
       <div class="timeline-dot"></div>
       <div class="project-header" onclick="toggleProject('p7')">
@@ -565,33 +606,27 @@ footer a{color:var(--red2);text-decoration:none}
         <div class="project-toggle">+</div>
       </div>
       <div class="project-body">
-        <p class="project-intro">Does a country's economic growth inevitably come at the cost of its environment? This project investigates that question using World Bank data across Australia, Germany, and France — and the answer is more nuanced than a simple yes or no.</p>
+        <p class="project-intro">Does economic growth inevitably come at the cost of the environment? This project investigates that question using World Bank data across Australia, Germany, and France — the answer is more nuanced than expected.</p>
         <div class="project-full-desc">
-          <p>The research question driving this project was: <em>to what extent does the economic development and growth of a country influence its carbon emissions and greenhouse gas levels?</em> It is a question with real policy implications — if GDP growth and emissions are tightly coupled, then sustainable development requires fundamentally different economic models.</p>
-          <p>I sourced data from the World Bank and data.gov, collecting Annual CO2 emissions, Real GDP growth, Total GHG emissions, and pollution-related mortality across 2014–2019. The three countries were chosen deliberately: Australia is large with historically high emissions, Germany is an industrial economy in transition, and France represents a more decoupled growth model — together they tell different sides of the same story.</p>
-          <p>Data cleaning was done entirely in Power Query. This included trimming and filtering columns to focus only on relevant years and countries, converting the Entity column in Total-GHG-emissions from strings to numbers using a custom IF function column, and merging the real GDP growth and total GHG emissions tables to enable direct visual comparison on the same chart axes.</p>
-          <p>The final Power BI dashboard spans three pages. Page one tracks Real GDP growth by year using bar charts and a line chart with trend lines, with a correlation coefficient card. Page two overlays the Sum of Real GDP and Annual GHG emissions over time — revealing that while GDP fluctuates, GHG emissions remain relatively stable, suggesting partial decoupling. Page three focuses on the human cost: deaths from unsafe water and air pollution by country, showing that Australia has the lowest pollution-related death count while Germany has the highest, despite their GDP differences.</p>
-          <p>The headline finding: when the economy grows, emissions tend to rise — but the correlation coefficient of −0.01 across all entities shows the relationship is weaker than expected. More strikingly, pollution-related deaths correlate more strongly with air and water quality than with GDP itself, meaning that environmental health policy matters independently of economic growth.</p>
+          <p>The research question: to what extent does a country's economic development influence its carbon emissions and greenhouse gas levels? I sourced data from the World Bank and data.gov — CO2, GHG, Real GDP growth, and pollution-related mortality across 2014–2019. The three countries were chosen deliberately to represent different growth-emissions relationships.</p>
+          <p>Data cleaning done entirely in Power Query: column trimming, type conversion, custom IF function columns, and merging GDP and GHG tables for direct visual comparison. The final Power BI dashboard covers three pages: GDP trends, GHG vs GDP overlay, and pollution-related deaths. Headline finding: correlation coefficient of −0.01 — far weaker than assumed.</p>
         </div>
         <div class="block-title">Project Highlights</div>
         <ul class="highlight-list">
-          <li>Sourced and merged datasets from World Bank and data.gov covering CO2, GHG, GDP, and pollution mortality (2014–2019)</li>
-          <li>Cleaned all datasets in Power Query: column trimming, type conversion, custom IF columns, and query merging</li>
-          <li>Built a 3-page interactive Power BI dashboard: GDP trends, GHG comparison, and pollution-related deaths</li>
-          <li>Calculated correlation coefficients between GDP growth and GHG emissions — overall coefficient: −0.01</li>
-          <li>Australia had the lowest GDP growth but also the lowest pollution-related deaths; Germany had the highest of both</li>
-          <li>GHG emissions remained relatively stable despite GDP fluctuations — indicating partial decoupling over the period</li>
+          <li>Merged World Bank and data.gov datasets covering CO2, GHG, GDP, and pollution mortality (2014–2019)</li>
+          <li>Full Power Query cleaning: trimming, type conversion, custom IF columns, query merging</li>
+          <li>3-page interactive Power BI dashboard: GDP trends, GHG comparison, pollution deaths</li>
+          <li>GDP-GHG correlation coefficient: −0.01 — suggesting partial decoupling over the period</li>
         </ul>
         <div class="block-title">Key Takeaways</div>
         <ul class="takeaway-list">
-          <li>GDP and emissions are correlated but not as tightly as assumed — energy mix and environmental policy matter more than raw economic size</li>
-          <li>Pollution deaths are driven by air and water quality, not directly by GDP — this challenges the simple "growth equals harm" narrative</li>
-          <li>Dashboard design for a non-technical audience requires storytelling: each page should answer one question clearly</li>
-          <li>Missing data in early years made regression analysis impossible — data quality constraints must always be documented honestly</li>
+          <li>Energy mix and environmental policy matter more than raw GDP size for emissions outcomes</li>
+          <li>Pollution deaths are driven by air and water quality, not directly by GDP</li>
+          <li>Dashboard design for non-technical audiences requires storytelling: each page should answer one clear question</li>
         </ul>
         <div class="pdf-block">
           <div class="pdf-label">Power BI Dashboard</div>
-          <iframe class="pdf-embed" src="PowerBI_Dashboard.pdf" title="SDG GDP Growth and Emissions Power BI Dashboard"></iframe>
+          <iframe class="pdf-embed" src="PowerBI_Dashboard.pdf" title="SDG GDP Growth and Emissions Dashboard"></iframe>
         </div>
         <div class="project-footer">
           <div class="tech-stack"><span class="tech-badge">Power BI</span><span class="tech-badge">Power Query</span><span class="tech-badge">EDA</span><span class="tech-badge">Data Viz</span><span class="tech-badge">World Bank Data</span><span class="tech-badge">CRISP-DM</span></div>
@@ -624,7 +659,7 @@ footer a{color:var(--red2);text-decoration:none}
 <section class="section" id="contact">
   <div class="sec-label">05 / Contact</div>
   <h2>GET IN TOUCH</h2>
-  <p style="color:var(--muted);font-size:1.1rem;font-weight:300;font-style:italic;max-width:560px">I'm actively looking for a full-time internship (36–40 hrs/week). If you're working on interesting ML or AI problems, reach out — I'd love to talk.</p>
+  <p style="color:var(--muted);font-size:1.2rem;font-weight:300;font-style:italic;max-width:560px">I'm actively looking for a full-time internship (36–40 hrs/week). If you're working on interesting ML or AI problems, reach out — I'd love to talk.</p>
   <div class="contact-grid">
     <a href="mailto:Ashrafnahlouse@gmail.com" class="contact-cell">
       <div class="contact-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></div>
@@ -637,10 +672,6 @@ footer a{color:var(--red2);text-decoration:none}
     <a href="https://linkedin.com/in/ashraf-nahlouse-7924ba396" target="_blank" rel="noopener" class="contact-cell">
       <div class="contact-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
       <div><div class="contact-lbl">LinkedIn</div><div class="contact-val">ashraf-nahlouse-7924ba396</div></div>
-    </a>
-    <a href="https://github.com/AshrafNahlouse234669" target="_blank" rel="noopener" class="contact-cell">
-      <div class="contact-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.929.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></div>
-      <div><div class="contact-lbl">GitHub</div><div class="contact-val">AshrafNahlouse234669</div></div>
     </a>
   </div>
 </section>
@@ -664,6 +695,13 @@ function toggleProject(id){
     setTimeout(()=>item.scrollIntoView({behavior:'smooth',block:'nearest'}),50);
   }
 }
+function toggleModal(open){
+  const o=document.getElementById('aboutModal');
+  if(open){o.classList.add('open');document.body.style.overflow='hidden';}
+  else{o.classList.remove('open');document.body.style.overflow='';}
+}
+function closeModal(e){if(e.target===document.getElementById('aboutModal'))toggleModal(false);}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')toggleModal(false);});
 </script>
 </body>
 </html>
